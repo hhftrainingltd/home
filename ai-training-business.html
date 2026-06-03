@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Training for Business | HHF Training</title>
+  <meta name="description" content="AI training for businesses, teams and organisations. Practical AI productivity, safe workplace use, policy awareness and responsible digital transformation support." />
+
+  <style>
+    :root {
+      --ink: #111827;
+      --ink-2: #263a57;
+      --muted: #667085;
+      --paper: #f7fbff;
+      --wash: #edf6ff;
+      --white: #ffffff;
+      --blue: #1d4ed8;
+      --sky: #38bdf8;
+      --teal: #0f766e;
+      --teal-2: #14b8a6;
+      --line: rgba(147, 197, 253, 0.66);
+      --shadow: 0 22px 64px rgba(17, 24, 39, 0.10);
+      --max: 1180px;
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(180deg, var(--paper), var(--wash));
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.62;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(231,241,255,0.90));
+      border-bottom: 1px solid rgba(147, 197, 253, 0.45);
+      box-shadow: 0 14px 44px rgba(17, 24, 39, 0.08);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: linear-gradient(135deg, #102033, var(--blue));
+      border: 1px solid rgba(37, 99, 235, 0.24);
+      box-shadow: 0 18px 38px rgba(29, 78, 216, 0.18);
+      font-weight: 950;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1.12rem;
+      line-height: 1.1;
+      font-weight: 950;
+    }
+
+    .brand span span {
+      display: block;
+      margin-top: 2px;
+      color: #43546f;
+      font-size: 0.78rem;
+      font-weight: 750;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 7px;
+      border-radius: 999px;
+      list-style: none;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(147, 197, 253, 0.38);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 16px 34px rgba(17,24,39,0.07);
+    }
+
+    .menu a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 15px;
+      border-radius: 999px;
+      color: #24364f;
+      font-size: 0.91rem;
+      font-weight: 850;
+    }
+
+    .menu a:hover {
+      background: linear-gradient(135deg, rgba(219,234,254,0.92), rgba(224,242,254,0.90));
+      color: var(--blue);
+    }
+
+    .nav-cta {
+      color: var(--white) !important;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      box-shadow: 0 16px 34px rgba(29, 78, 216, 0.24);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .mobile-toggle svg,
+    .icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .hero {
+      padding: 72px 0 64px;
+      background:
+        radial-gradient(circle at 88% 10%, rgba(147,197,253,0.36), transparent 34%),
+        linear-gradient(180deg, #f8fbff 0%, #edf6ff 100%);
+      border-bottom: 1px solid rgba(147,197,253,0.36);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.77fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .visual-card,
+    .section-head,
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: linear-gradient(105deg, rgba(255,255,255,0.96), rgba(231,243,255,0.94));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: clamp(32px, 5vw, 56px);
+    }
+
+    .label {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      max-width: 100%;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: rgba(219, 234, 254, 0.86);
+      color: var(--blue);
+      border: 1px solid rgba(147, 197, 253, 0.92);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 880px;
+      margin-top: 18px;
+      color: var(--ink);
+      font-size: clamp(3rem, 5.8vw, 5.7rem);
+      line-height: 0.98;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero-card > p {
+      max-width: 820px;
+      margin-top: 22px;
+      color: var(--ink-2);
+      font-size: clamp(1.08rem, 1.4vw, 1.25rem);
+      line-height: 1.66;
+      font-weight: 680;
+    }
+
+    .hero-actions,
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(17,24,39,0.12);
+      font-weight: 950;
+      box-shadow: 0 14px 32px rgba(17,24,39,0.10);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal-2), var(--teal));
+      color: #071b1a;
+      border-color: rgba(20,184,166,0.22);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.78);
+      color: var(--ink);
+    }
+
+    .quick-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .quick-point,
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(147,197,253,0.58);
+      color: var(--ink-2);
+      font-weight: 760;
+    }
+
+    .quick-point strong,
+    .stat strong {
+      display: block;
+      color: var(--blue);
+      font-size: 1.05rem;
+      font-weight: 950;
+    }
+
+    .visual-card {
+      min-height: 100%;
+      display: grid;
+      grid-template-rows: 250px 1fr;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(224,242,254,0.88));
+    }
+
+    .visual-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    .visual-body {
+      display: grid;
+      gap: 12px;
+      padding: 24px;
+    }
+
+    .visual-body h2 {
+      font-size: 1.55rem;
+      line-height: 1.16;
+      font-weight: 950;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .section-head {
+      padding: 32px 34px;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      width: 100%;
+      max-width: none;
+      margin-top: 12px;
+      color: var(--ink);
+      font-size: clamp(2rem, 3.6vw, 3.55rem);
+      line-height: 1.04;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 1000px;
+      margin-top: 16px;
+      color: var(--ink-2);
+      font-size: clamp(1.02rem, 1.25vw, 1.16rem);
+      line-height: 1.62;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      padding: 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,250,255,0.96));
+      box-shadow: 0 20px 58px rgba(17,24,39,0.09);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--blue), var(--sky), var(--teal));
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 126px;
+      height: 126px;
+      right: -64px;
+      top: -64px;
+      border-radius: 50%;
+      background: rgba(191,219,254,0.46);
+      pointer-events: none;
+    }
+
+    .icon,
+    .num {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(219,234,254,0.94), rgba(224,242,254,0.94));
+      color: var(--blue);
+      border: 1px solid rgba(147,197,253,0.74);
+      box-shadow: 0 14px 30px rgba(29,78,216,0.12);
+      font-weight: 950;
+    }
+
+    .card h3 {
+      color: var(--ink);
+      font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+      line-height: 1.16;
+      font-weight: 950;
+    }
+
+    .card p,
+    .card li {
+      margin-top: 10px;
+      color: #334155;
+      font-size: 1rem;
+      line-height: 1.58;
+      font-weight: 620;
+    }
+
+    .card ul {
+      margin-top: 14px;
+      padding-left: 18px;
+    }
+
+    .highlight {
+      background:
+        radial-gradient(circle at 90% 0%, rgba(56,189,248,0.24), transparent 35%),
+        linear-gradient(135deg, rgba(29,78,216,0.95), rgba(15,118,110,0.86));
+      color: var(--white);
+      border-color: rgba(219,234,254,0.22);
+    }
+
+    .highlight h3,
+    .highlight p,
+    .highlight li,
+    .highlight .num {
+      color: var(--white);
+    }
+
+    .highlight .num {
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .list-panel {
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,250,255,0.96));
+      box-shadow: 0 20px 58px rgba(17,24,39,0.09);
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 32px;
+      color: #334155;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .check-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 6px rgba(15,118,110,0.10);
+    }
+
+    .process {
+      position: relative;
+      display: flex;
+      gap: 18px;
+      padding-top: 8px;
+    }
+
+    .process::before {
+      content: "";
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      top: 59px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--sky), var(--teal));
+    }
+
+    .process .card {
+      flex: 1 1 0;
+      min-height: 194px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.86);
+      box-shadow: 0 14px 36px rgba(17,24,39,0.06);
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 18px 20px;
+      color: var(--ink);
+      font-weight: 950;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      padding: 0 20px 20px;
+      color: #334155;
+      font-weight: 620;
+    }
+
+    .cta {
+      padding: 84px 0 0;
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      transform: translateY(62px);
+    }
+
+    .cta-copy,
+    .contact-panel {
+      padding: clamp(30px, 4vw, 48px);
+    }
+
+    .cta-copy h2 {
+      max-width: 760px;
+      margin-top: 14px;
+      font-size: clamp(2.7rem, 4.7vw, 4.65rem);
+      line-height: 1.02;
+      font-weight: 950;
+    }
+
+    .cta-copy p {
+      max-width: 720px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+      font-weight: 620;
+    }
+
+    .contact-panel {
+      display: grid;
+      align-content: center;
+      gap: 0;
+      background: linear-gradient(180deg, rgba(232,246,246,0.98), rgba(224,242,254,0.92));
+      border-left: 1px solid rgba(147,197,253,0.58);
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 128px minmax(0, 1fr);
+      align-items: center;
+      gap: 22px;
+      padding: 21px 0;
+      border-bottom: 1px solid rgba(17,24,39,0.12);
+    }
+
+    .contact-row:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-row strong {
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .contact-row span {
+      color: var(--ink);
+      font-size: clamp(1.02rem, 1.28vw, 1.22rem);
+      line-height: 1.32;
+      font-weight: 520;
+    }
+
+    footer {
+      padding: 112px 0 34px;
+      background: var(--ink);
+      color: rgba(255,255,255,0.72);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-weight: 800;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 70;
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+      box-shadow: 0 18px 42px rgba(22,163,74,0.34);
+      border: 1px solid rgba(255,255,255,0.36);
+    }
+
+    .whatsapp-float svg {
+      width: 34px;
+      height: 34px;
+      fill: #ffffff;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .split,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4,
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process {
+        flex-wrap: wrap;
+      }
+
+      .process::before {
+        display: none;
+      }
+
+      .process .card {
+        flex: 1 1 calc(50% - 18px);
+      }
+
+      .contact-panel {
+        border-left: 0;
+        border-top: 1px solid rgba(147,197,253,0.58);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 44px;
+      }
+
+      .mobile-toggle {
+        display: grid;
+        place-items: center;
+        justify-self: end;
+      }
+
+      .menu {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 88px;
+        display: none;
+        padding: 12px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.96);
+        box-shadow: 0 24px 64px rgba(17,24,39,0.14);
+      }
+
+      .menu.open {
+        display: grid;
+      }
+
+      .menu a {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: auto;
+        margin-left: 14px;
+        margin-right: 14px;
+      }
+
+      section,
+      .hero {
+        padding: 62px 0;
+      }
+
+      .brand span span {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(2.55rem, 13vw, 3.45rem);
+      }
+
+      .hero-card,
+      .section-head,
+      .card,
+      .list-panel,
+      .cta-copy,
+      .contact-panel {
+        padding: 24px;
+        border-radius: 22px;
+      }
+
+      .quick-points,
+      .stat-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .process .card {
+        min-height: auto;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .contact-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .footer-inner {
+        display: grid;
+      }
+    }
+  </style>
+<style id="hhf-final-contact-style">
+/* Neon contact redesign based on uploaded reference image */
+.neon-contact {
+  position: relative;
+  padding: 92px 0 0;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.18), transparent 34%),
+    radial-gradient(circle at 92% 10%, rgba(56, 189, 248, 0.14), transparent 34%),
+    linear-gradient(180deg, #020817 0%, #07111f 100%) !important;
+  overflow: hidden;
+}
+
+.neon-contact::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -16%;
+  height: 48%;
+  background:
+    radial-gradient(ellipse at center, rgba(34, 211, 238, 0.18), transparent 56%),
+    repeating-radial-gradient(ellipse at center, rgba(34, 211, 238, 0.32) 0 2px, transparent 2px 26px);
+  opacity: 0.28;
+  transform: perspective(720px) rotateX(62deg);
+  pointer-events: none;
+}
+
+.neon-contact-box {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.88fr);
+  min-height: 640px;
+  border-radius: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(34, 211, 238, 0.82);
+  background:
+    linear-gradient(135deg, rgba(5, 18, 38, 0.98), rgba(2, 8, 23, 0.98));
+  box-shadow:
+    0 38px 110px rgba(0, 0, 0, 0.42),
+    0 0 48px rgba(20, 184, 166, 0.18);
+  transform: translateY(62px);
+}
+
+.neon-contact-left {
+  position: relative;
+  padding: clamp(42px, 6vw, 76px);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(29, 78, 216, 0.25), transparent 36%),
+    linear-gradient(135deg, #05142b 0%, #020817 100%);
+  color: #ffffff;
+}
+
+.neon-contact-left::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 35%;
+  background:
+    radial-gradient(ellipse at bottom, rgba(34, 211, 238, 0.18), transparent 60%);
+  pointer-events: none;
+}
+
+.neon-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 12px 28px;
+  border-radius: 999px;
+  color: #ffffff;
+  border: 2px solid #22d3ee;
+  background: rgba(2, 8, 23, 0.42);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.26), inset 0 0 18px rgba(34, 211, 238, 0.08);
+  font-size: 0.88rem;
+  font-weight: 950;
+  letter-spacing: 0.18em;
+}
+
+.neon-contact-left h2 {
+  max-width: 840px;
+  margin-top: 34px;
+  color: #ffffff;
+  font-size: clamp(3.3rem, 7.4vw, 6.85rem);
+  line-height: 0.94;
+  font-weight: 950;
+  letter-spacing: -0.055em;
+  text-shadow: 0 18px 44px rgba(0, 0, 0, 0.42);
+}
+
+.neon-contact-left h2 span {
+  display: block;
+  color: #2dd4bf;
+  text-shadow: 0 0 22px rgba(45, 212, 191, 0.34);
+}
+
+.neon-accent-line {
+  width: 104px;
+  height: 7px;
+  margin-top: 34px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22d3ee, #2dd4bf);
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.45);
+}
+
+.neon-contact-left p {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin-top: 32px;
+  color: rgba(226, 232, 240, 0.9);
+  font-size: clamp(1.08rem, 1.5vw, 1.36rem);
+  line-height: 1.72;
+  font-weight: 650;
+}
+
+.neon-contact-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.neon-btn {
+  min-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border-radius: 14px;
+  font-weight: 950;
+  letter-spacing: 0.01em;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.neon-btn:hover {
+  transform: translateY(-4px);
+}
+
+.neon-btn-primary {
+  color: #02111f;
+  background: linear-gradient(135deg, #22d3ee, #2dd4bf);
+  box-shadow: 0 18px 42px rgba(34, 211, 238, 0.25);
+}
+
+.neon-btn-secondary {
+  color: #ffffff;
+  border: 1px solid rgba(34, 211, 238, 0.48);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.neon-contact-panel {
+  position: relative;
+  display: grid;
+  align-content: center;
+  padding: clamp(38px, 5vw, 70px);
+  background:
+    radial-gradient(circle at 28% 4%, rgba(45, 212, 191, 0.28), transparent 32%),
+    linear-gradient(150deg, rgba(15, 118, 110, 0.92), rgba(1, 42, 50, 0.96) 48%, rgba(2, 8, 23, 0.98));
+  border-left: 1px solid rgba(34, 211, 238, 0.75);
+}
+
+.neon-contact-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.10), transparent 38%);
+  pointer-events: none;
+}
+
+.neon-contact-row {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.28);
+  color: #ffffff;
+}
+
+.neon-contact-row:last-child {
+  border-bottom: 0;
+}
+
+.neon-contact-icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #2dd4bf;
+  background: radial-gradient(circle at 35% 25%, rgba(45, 212, 191, 0.16), rgba(2, 8, 23, 0.88));
+  border: 1px solid rgba(45, 212, 191, 0.88);
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.32),
+    0 0 24px rgba(45, 212, 191, 0.20);
+}
+
+.neon-contact-icon svg {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.neon-contact-text strong {
+  display: block;
+  color: #2dd4bf;
+  font-size: clamp(0.86rem, 1.1vw, 1.02rem);
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.neon-contact-text span {
+  display: block;
+  margin-top: 8px;
+  color: #ffffff;
+  font-size: clamp(1.55rem, 2.25vw, 2.12rem);
+  line-height: 1.14;
+  font-weight: 950;
+  letter-spacing: -0.025em;
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.38);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 980px) {
+  .neon-contact-box {
+    grid-template-columns: 1fr;
+  }
+
+  .neon-contact-panel {
+    border-left: 0;
+    border-top: 1px solid rgba(34, 211, 238, 0.75);
+  }
+}
+
+@media (max-width: 640px) {
+  .neon-contact {
+    padding-top: 62px;
+  }
+
+  .neon-contact-box {
+    border-radius: 24px;
+    transform: translateY(44px);
+  }
+
+  .neon-contact-left,
+  .neon-contact-panel {
+    padding: 32px 24px;
+  }
+
+  .neon-contact-left h2 {
+    font-size: clamp(2.7rem, 14vw, 4.3rem);
+  }
+
+  .neon-contact-row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 16px;
+    padding: 22px 0;
+  }
+
+  .neon-contact-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .neon-contact-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .neon-contact-text span {
+    font-size: 1.35rem;
+  }
+}
+
+/* Balanced contact section */
+.neon-contact-box{
+    grid-template-columns:minmax(0,1.25fr) minmax(340px,.75fr) !important;
+}
+
+.neon-contact-left h2{
+    font-size:clamp(2.4rem,4vw,4.2rem) !important;
+    line-height:1.0 !important;
+}
+
+.neon-contact-left p{
+    font-size:clamp(1rem,1.2vw,1.15rem) !important;
+    max-width:620px !important;
+}
+
+.neon-contact-icon{
+    width:60px !important;
+    height:60px !important;
+}
+
+.neon-contact-icon svg{
+    width:28px !important;
+    height:28px !important;
+}
+
+.neon-contact-row{
+    grid-template-columns:80px 1fr !important;
+    gap:20px !important;
+    padding:20px 0 !important;
+}
+
+.neon-contact-text strong{
+    font-size:.78rem !important;
+    letter-spacing:.12em !important;
+}
+
+.neon-contact-text span{
+    font-size:clamp(1.15rem,1.3vw,1.45rem) !important;
+    line-height:1.2 !important;
+}
+
+.neon-contact-panel{
+    padding:42px !important;
+}
+
+.neon-contact-pill{
+    padding:10px 22px !important;
+    font-size:.8rem !important;
+}
+
+.neon-accent-line{
+    width:80px !important;
+    margin-top:24px !important;
+}
+
+.neon-contact-actions{
+    margin-top:24px !important;
+}
+
+.neon-btn{
+    min-height:50px !important;
+    font-size:.95rem !important;
+}
+
+/* Final contact section size refinement */
+.neon-contact-left h2{
+    font-size:clamp(2rem,3.2vw,3.6rem) !important;
+    line-height:1.02 !important;
+}
+
+.neon-contact-left p{
+    font-size:clamp(.95rem,1.05vw,1.08rem) !important;
+    line-height:1.62 !important;
+}
+
+.neon-contact-text strong{
+    font-size:.72rem !important;
+    letter-spacing:.11em !important;
+}
+
+.neon-contact-text span{
+    font-size:clamp(1rem,1.1vw,1.25rem) !important;
+    line-height:1.22 !important;
+    font-weight:900 !important;
+}
+
+.neon-contact-icon{
+    width:52px !important;
+    height:52px !important;
+}
+
+.neon-contact-icon svg{
+    width:24px !important;
+    height:24px !important;
+}
+
+.neon-contact-row{
+    grid-template-columns:68px minmax(0,1fr) !important;
+    gap:16px !important;
+    padding:16px 0 !important;
+}
+
+.neon-contact-panel{
+    padding:36px 38px !important;
+}
+
+.neon-contact-pill{
+    padding:9px 20px !important;
+    font-size:.74rem !important;
+}
+
+.neon-accent-line{
+    width:72px !important;
+    height:6px !important;
+    margin-top:22px !important;
+}
+
+.neon-contact-actions{
+    margin-top:22px !important;
+}
+
+.neon-btn{
+    min-height:46px !important;
+    padding:0 20px !important;
+    font-size:.9rem !important;
+}
+
+@media (max-width:640px){
+    .neon-contact-left h2{
+        font-size:clamp(2.2rem,11vw,3.5rem) !important;
+    }
+
+    .neon-contact-text span{
+        font-size:1.08rem !important;
+    }
+
+    .neon-contact-row{
+        grid-template-columns:58px minmax(0,1fr) !important;
+    }
+}
+</style>
+
+<style id="hhf-contact-compat">
+section.neon-contact {
+  display: block !important;
+  grid-template-columns: none !important;
+  gap: 0 !important;
+  align-items: initial !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+section.neon-contact a {
+  text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="hhftraining_premium_v3.html#top" aria-label="HHF Training home">
+        <span class="brand-mark">HHF</span>
+        <span>
+          <strong>HHF Training</strong>
+          <span>AI, cyber safety, CPD and consultancy</span>
+        </span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-controls="mainMenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+      </button>
+
+      <ul class="menu" id="mainMenu">
+        <li><a href="hhftraining_premium_v3.html#services">All Services</a></li>
+        <li><a href="#covers">What It Covers</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
+        <li><a href="#delivery">Delivery</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="nav-cta" href="#contact">Book Training</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-card reveal">
+          <div class="label">AI Training for Business</div>
+          <h1>Practical AI training for <span>modern business teams.</span></h1>
+          <p>
+            HHF Training helps organisations use AI confidently, safely and productively. The training is designed for real workplace tasks, staff confidence, responsible use and practical improvement.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Book Business AI Training</a>
+            <a href="#covers" class="btn btn-secondary">View Training Content</a>
+          </div>
+          <div class="quick-points">
+            <div class="quick-point"><strong>Productivity</strong> Help teams save time on everyday workplace tasks.</div>
+            <div class="quick-point"><strong>Safe Use</strong> Clear guidance around data, accuracy and responsible adoption.</div>
+            <div class="quick-point"><strong>Accredited CPD</strong> CPD programmes accredited by an approved UK awarding body.</div>
+          </div>
+        </div>
+
+        <aside class="visual-card reveal" aria-label="Business AI training summary">
+          <img src="hhf-ai-business-hero.png" alt="Business team planning practical AI adoption in a professional workspace" />
+          <div class="visual-body">
+            <h2>Designed for organisations that want AI to be useful, safe and easy to understand.</h2>
+            <div class="stat-grid">
+              <div class="stat"><strong>Teams</strong> Staff, managers and operational departments.</div>
+              <div class="stat"><strong>AI</strong> Prompts, tools, workflows and safe use.</div>
+              <div class="stat"><strong>CPD</strong> Accredited staff development programmes.</div>
+              <div class="stat"><strong>Policy</strong> Guidance for responsible adoption.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="accreditation">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">Accredited CPD</div>
+          <h2>AI training with accredited CPD value for your workforce.</h2>
+          <p>
+            HHF Training CPD programmes are accredited by an approved UK awarding body, helping organisations evidence staff development and demonstrate a structured approach to AI capability.
+          </p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card reveal"><span class="icon">UK</span><h3>Approved awarding body recognition</h3><p>Accredited CPD gives the programme stronger credibility for workforce development, internal training records and organisational learning plans.</p></article>
+          <article class="card reveal"><span class="icon">CPD</span><h3>Professional staff development</h3><p>The training supports staff capability, confidence and practical AI awareness in a way that can be recorded as meaningful CPD.</p></article>
+          <article class="card reveal"><span class="icon">QA</span><h3>Structured learning outcomes</h3><p>Sessions are designed around clear aims, workplace relevance and practical outcomes rather than informal tool demonstrations alone.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="who">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">Who It Supports</div>
+          <h2>Built for staff, managers and teams who need practical AI confidence.</h2>
+          <p>
+            The training can be adapted for beginners, managers, office teams, customer-facing staff, operations, HR, admin, marketing, compliance and leadership groups.
+          </p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card reveal"><span class="icon">01</span><h3>Business Owners and Leaders</h3><p>Understand AI opportunities, risks, staff readiness, policy needs and practical adoption steps before investing in tools or wider change.</p></article>
+          <article class="card reveal"><span class="icon">02</span><h3>Managers and Team Leads</h3><p>Identify where AI can improve team workflows, reduce repetitive tasks and support better communication while keeping oversight clear.</p></article>
+          <article class="card reveal"><span class="icon">03</span><h3>Administrative Teams</h3><p>Use AI to support drafting, summarising, planning, meeting notes, email preparation, document improvement and routine communication.</p></article>
+          <article class="card reveal"><span class="icon">04</span><h3>Customer-Facing Staff</h3><p>Explore safe ways to improve responses, FAQs, service scripts, customer communication and consistency without exposing sensitive information.</p></article>
+          <article class="card reveal"><span class="icon">05</span><h3>HR and Training Teams</h3><p>Support staff development, onboarding materials, internal guidance, CPD records and responsible AI awareness across the workforce.</p></article>
+          <article class="card reveal"><span class="icon">06</span><h3>Operational Departments</h3><p>Review practical workflow improvements, process documentation, reporting support, risk checks and productivity use cases.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="problems">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">Problems It Solves</div>
+          <h2>Clear AI training for organisations that want progress without confusion.</h2>
+          <p>
+            Many businesses know AI could help, but staff need simple guidance on what to use, how to use it safely and where the real value sits.
+          </p>
+        </div>
+        <div class="grid grid-4">
+          <article class="card reveal"><h3>Staff are experimenting without guidance</h3><p>Employees may already be using AI tools informally. Training helps create safer, more consistent and more professional use.</p></article>
+          <article class="card reveal"><h3>Teams do not know what AI can help with</h3><p>Staff often need practical examples linked to emails, reports, planning, customer communication, admin and decision support.</p></article>
+          <article class="card reveal"><h3>Data and confidentiality risks are unclear</h3><p>Businesses need staff to understand what should not be entered into AI tools and why checking outputs is essential.</p></article>
+          <article class="card reveal"><h3>AI adoption feels too technical</h3><p>The training explains AI in everyday workplace language, avoiding unnecessary jargon and focusing on useful outcomes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="covers">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">What The Training Covers</div>
+          <h2>A practical business AI programme your teams can actually use.</h2>
+          <p>
+            The content can be delivered as an awareness session, practical workshop, leadership briefing or bespoke CPD programme for your organisation.
+          </p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card reveal"><span class="icon">AI</span><h3>Understanding AI in Business</h3><p>What AI tools are, what they can do, where they make mistakes and how staff should check outputs before using them.</p></article>
+          <article class="card reveal"><span class="icon">PR</span><h3>Prompt Writing for Work</h3><p>Practical prompt techniques for emails, reports, planning, summaries, customer responses, project notes and internal documents.</p></article>
+          <article class="card reveal"><span class="icon">WF</span><h3>Workflow and Productivity</h3><p>How teams can identify repetitive tasks, improve drafting, speed up preparation and use AI as a support tool rather than a shortcut.</p></article>
+          <article class="card reveal"><span class="icon">DT</span><h3>Data and Confidentiality</h3><p>Clear guidance on sensitive information, client data, staff data, commercial details, privacy and responsible tool use.</p></article>
+          <article class="card reveal"><span class="icon">AC</span><h3>Accuracy and Human Checking</h3><p>Why AI outputs need review, how to spot weak responses, how to challenge assumptions and how to keep accountability with people.</p></article>
+          <article class="card reveal"><span class="icon">CM</span><h3>Communication Support</h3><p>Using AI to improve clarity, tone, structure and consistency in emails, policies, service responses, FAQs and business documents.</p></article>
+          <article class="card reveal"><span class="icon">PL</span><h3>Policy and Staff Guidance</h3><p>Helping organisations build simple acceptable-use guidance, staff expectations, escalation points and safe-use principles.</p></article>
+          <article class="card reveal"><span class="icon">LD</span><h3>Leadership and Adoption</h3><p>Supporting managers to think through implementation, team readiness, risk, change management and practical next steps.</p></article>
+          <article class="card reveal"><span class="icon">CPD</span><h3>Accredited CPD Activities</h3><p>Scenario-based learning, group discussion, workplace examples and action planning supported by accredited CPD programme structure.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="outcomes">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">Learning Outcomes</div>
+          <h2>What your organisation should be able to do after the training.</h2>
+          <p>
+            The goal is to help staff use AI confidently and responsibly while helping leaders build a safer, more productive approach to adoption.
+          </p>
+        </div>
+        <div class="split">
+          <article class="card highlight reveal">
+            <span class="num">HHF</span>
+            <h3>Business-focused, practical and responsible.</h3>
+            <p>
+              The training is not about chasing every new AI tool. It is about helping staff understand safe use, useful workflows, good prompts and human accountability.
+            </p>
+          </article>
+          <div class="list-panel reveal">
+            <ul class="check-list">
+              <li>Staff understand what AI can and cannot reliably do.</li>
+              <li>Teams can use prompts to support everyday workplace tasks.</li>
+              <li>Staff understand data, confidentiality and privacy risks.</li>
+              <li>Managers can identify where AI could improve team workflows.</li>
+              <li>Organisations can create clearer rules for acceptable AI use.</li>
+              <li>Teams understand why human checking and accountability remain essential.</li>
+              <li>Staff development can be supported through accredited CPD.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="delivery">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">Delivery Options</div>
+          <h2>Flexible AI training built around your business needs.</h2>
+          <p>
+            The same core programme can be adapted for leadership teams, whole-staff CPD, operational departments, customer-facing teams or smaller working groups.
+          </p>
+        </div>
+        <div class="grid grid-4">
+          <article class="card reveal"><h3>AI Awareness Briefing</h3><p>A concise introduction for staff who need to understand AI, risks, opportunities and safe workplace use.</p><ul><li>Plain language</li><li>Low jargon</li><li>Strong foundation</li></ul></article>
+          <article class="card reveal"><h3>Practical Team Workshop</h3><p>A hands-on session where teams explore prompts, workplace examples, productivity use cases and safe-use scenarios.</p><ul><li>Interactive</li><li>Task-based</li><li>Useful takeaways</li></ul></article>
+          <article class="card reveal"><h3>Leadership Briefing</h3><p>A strategic session for owners, senior managers and leads covering adoption, risk, policy and implementation priorities.</p><ul><li>Business focus</li><li>Policy discussion</li><li>Action planning</li></ul></article>
+          <article class="card reveal"><h3>Bespoke Department Session</h3><p>Tailored support for admin, HR, marketing, customer service, operations or other teams with specific workflow needs.</p><ul><li>Role-specific</li><li>Practical examples</li><li>Focused outcomes</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">Organisation Benefits</div>
+          <h2>Practical value for productivity, confidence and safer digital practice.</h2>
+          <p>
+            The training helps businesses move from uncertainty to structured AI use that staff can understand and managers can guide.
+          </p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card reveal"><h3>Improved staff productivity</h3><p>Teams learn how AI can support drafting, planning, summarising, communication and routine preparation tasks.</p></article>
+          <article class="card reveal"><h3>Safer workplace AI use</h3><p>Staff understand confidentiality, privacy, checking, accuracy and appropriate use before applying AI to real work.</p></article>
+          <article class="card reveal"><h3>Clearer team guidance</h3><p>Managers can turn broad AI concerns into practical staff expectations, simple rules and shared working principles.</p></article>
+          <article class="card reveal"><h3>Better communication</h3><p>Teams can use AI to improve clarity, tone, structure and consistency across emails, reports and customer responses.</p></article>
+          <article class="card reveal"><h3>Accredited CPD value</h3><p>Organisations can promote staff development through CPD programmes accredited by an approved UK awarding body.</p></article>
+          <article class="card reveal"><h3>Responsible innovation</h3><p>The organisation builds a more confident culture around digital change, productivity and practical AI adoption.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">Training Journey</div>
+          <h2>From first conversation to practical business improvement.</h2>
+          <p>
+            HHF Training keeps the process simple, structured and focused on your organisation, staff roles and operational priorities.
+          </p>
+        </div>
+        <div class="process">
+          <article class="card reveal"><span class="num">1</span><h3>Consultation</h3><p>Discuss your business, staff groups, current AI use, concerns and preferred delivery format.</p></article>
+          <article class="card reveal"><span class="num">2</span><h3>Needs Review</h3><p>Identify productivity opportunities, risk areas, policy gaps and staff confidence levels.</p></article>
+          <article class="card reveal"><span class="num">3</span><h3>Bespoke Design</h3><p>Shape the training around your workplace examples, departments and desired outcomes.</p></article>
+          <article class="card reveal"><span class="num">4</span><h3>Delivery</h3><p>Deliver clear, engaging and practical training with examples staff can understand and use.</p></article>
+          <article class="card reveal"><span class="num">5</span><h3>Follow-Up</h3><p>Provide actions, resources and guidance to support better AI practice after the session.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="label">Frequently Asked Questions</div>
+          <h2>Simple answers before your business books AI training.</h2>
+          <p>
+            These FAQs are written for owners, managers and decision-makers who need to understand whether the training is suitable for their staff.
+          </p>
+        </div>
+        <div class="faq">
+          <details class="reveal"><summary>Is this suitable for staff with no AI experience?</summary><p>Yes. The training can start with the basics and explain AI in plain business language. Staff do not need technical knowledge.</p></details>
+          <details class="reveal"><summary>Can the session be tailored to our business?</summary><p>Yes. Examples, scenarios and activities can be adapted to your sector, departments, staff roles and current AI priorities.</p></details>
+          <details class="reveal"><summary>Does the training cover data and confidentiality?</summary><p>Yes. Staff receive clear guidance on sensitive information, client data, commercial details, privacy risks and responsible use.</p></details>
+          <details class="reveal"><summary>Can leaders receive a separate session?</summary><p>Yes. Leadership briefings can focus on adoption, policy, risk, governance, staff expectations and implementation planning.</p></details>
+          <details class="reveal"><summary>Can this be delivered online?</summary><p>Yes. The training can be delivered in-house, live online or as a hybrid programme depending on your team location and schedule.</p></details>
+          <details class="reveal"><summary>Is the CPD accredited?</summary><p>HHF Training CPD programmes are accredited by an approved UK awarding body, giving organisations a stronger staff development record.</p></details>
+        </div>
+      </div>
+    </section>
+<section class="cta neon-contact" id="contact">
+  <div class="container">
+    <div class="neon-contact-box reveal">
+      <div class="neon-contact-left">
+        <span class="neon-contact-pill">CONTACT</span>
+        <h2>Ready to <span>future-proof</span> your organisation?</h2>
+        <div class="neon-accent-line"></div>
+        <p>
+          Speak with HHF Training about AI training, cyber safety, CPD,
+          assessment design, quality assurance or digital transformation support.
+        </p>
+        <div class="neon-contact-actions">
+          <a class="neon-btn neon-btn-primary" href="mailto:info@hhftraining.co.uk">Send a Message</a>
+          <a class="neon-btn neon-btn-secondary" href="https://wa.me/447360503959">WhatsApp Us</a>
+        </div>
+      </div>
+
+      <div class="neon-contact-panel">
+        <a class="neon-contact-row" href="tel:02034321665">
+          <span class="neon-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.1 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.6a2 2 0 0 1-.45 2.11L9 10.72a16 16 0 0 0 4.28 4.28l1.29-1.28a2 2 0 0 1 2.11-.45c.83.29 1.7.5 2.6.62A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="neon-contact-text">
+            <strong>Telephone</strong>
+            <span>020 3432 1665</span>
+          </span>
+        </a>
+
+        <a class="neon-contact-row" href="mailto:info@hhftraining.co.uk">
+          <span class="neon-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
+          </span>
+          <span class="neon-contact-text">
+            <strong>Email</strong>
+            <span>info@hhftraining.co.uk</span>
+          </span>
+        </a>
+
+        <a class="neon-contact-row" href="https://wa.me/447360503959">
+          <span class="neon-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.3-4.6a8.5 8.5 0 1 1 16.2-4.1z"/><path d="M8.8 8.9c.2-.5.4-.6.8-.6h.6c.2 0 .5.1.6.4l.8 1.8c.1.3.1.5-.1.7l-.4.5c-.2.2-.2.4 0 .7.5.9 1.2 1.7 2.2 2.2.3.2.5.2.7 0l.6-.5c.2-.2.5-.2.7-.1l1.7.8c.3.1.5.4.4.7 0 .4-.2.9-.5 1.2-.4.4-1.1.6-1.8.5-3.2-.5-6.2-3.3-6.8-6.5-.1-.7.1-1.4.5-1.8z"/></svg>
+          </span>
+          <span class="neon-contact-text">
+            <strong>WhatsApp</strong>
+            <span>+44 7360 503959</span>
+          </span>
+        </a>
+
+        <a class="neon-contact-row" href="https://www.hhftraining.co.uk">
+          <span class="neon-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+          </span>
+          <span class="neon-contact-text">
+            <strong>Website</strong>
+            <span>www.hhftraining.co.uk</span>
+          </span>
+        </a>
+
+        <a class="neon-contact-row" href="https://www.hhftraining.uk">
+          <span class="neon-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 0 20"/><path d="M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+          </span>
+          <span class="neon-contact-text">
+            <strong>Website</strong>
+            <span>www.hhftraining.uk</span>
+          </span>
+        </a>
+
+        <div class="neon-contact-row">
+          <span class="neon-contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <span class="neon-contact-text">
+            <strong>Delivery</strong>
+            <span>In-house, online and bespoke</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+  <a class="whatsapp-float" href="https://wa.me/447360503959" target="_blank" rel="noopener" aria-label="Contact HHF Training on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.02 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.45 1.72 6.39L3.13 29l6.82-1.79a12.75 12.75 0 0 0 6.07 1.55h.01c7.04 0 12.77-5.72 12.77-12.76S23.06 3.2 16.02 3.2zm0 23.4h-.01c-1.88 0-3.72-.51-5.33-1.47l-.38-.23-4.05 1.06 1.08-3.94-.25-.4a10.58 10.58 0 0 1-1.62-5.66c0-5.81 4.74-10.54 10.56-10.54 2.82 0 5.47 1.1 7.46 3.09a10.46 10.46 0 0 1 3.1 7.45c0 5.81-4.74 10.54-10.56 10.54zm5.79-7.9c-.32-.16-1.87-.92-2.16-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.19-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.32-1.11 1.08-1.11 2.63s1.14 3.06 1.29 3.27c.16.21 2.24 3.42 5.42 4.79.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.87-.76 2.14-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.61-.37z"></path></svg>
+  </a>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>Copyright 2026 HHF Training. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#top">Top</a>
+        <a href="hhftraining_premium_v3.html#services">Services</a>
+        <a href="#covers">Training Content</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("mobileToggle");
+      var menu = document.getElementById("mainMenu");
+
+      if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+          var isOpen = menu.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        menu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            menu.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      var revealItems = document.querySelectorAll(".reveal");
+
+      if (!("IntersectionObserver" in window)) {
+        revealItems.forEach(function (item) {
+          item.classList.add("show");
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      revealItems.forEach(function (item) {
+        observer.observe(item);
+      });
+    })();
+  </script>
+</body>
+</html>
