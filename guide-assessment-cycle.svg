@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="860" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+  <title id="title">Assessment design guide for stronger evidence learning cycle</title>
+  <desc id="desc">A premium visual showing how learning moves from discovery to daily implementation and improvement.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.56" stop-color="#e9f6ff"/>
+      <stop offset="1" stop-color="#d7f4f0"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="0.55" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#0f172a" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="860" rx="54" fill="url(#bg)"/>
+  <circle cx="1010" cy="120" r="210" fill="#bfdbfe" opacity="0.36"/>
+  <circle cx="150" cy="760" r="230" fill="#ccfbf1" opacity="0.42"/>
+  <rect x="84" y="82" width="1032" height="696" rx="48" fill="#ffffff" opacity="0.72" stroke="#93c5fd" stroke-opacity="0.64"/>
+  <circle cx="600" cy="414" r="224" fill="none" stroke="url(#accent)" stroke-width="34" stroke-linecap="round" stroke-dasharray="310 54"/>
+  <circle cx="600" cy="414" r="126" fill="#ffffff" filter="url(#shadow)" stroke="#bfdbfe" stroke-width="3"/>
+  <text x="600" y="375" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#1d4ed8" font-weight="900" letter-spacing="7">LEARN</text>
+  <text x="600" y="426" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="54" fill="#111827" font-weight="950">APPLY</text>
+  <text x="600" y="470" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#0f766e" font-weight="900" letter-spacing="5">IMPROVE</text>
+  
+  <g filter="url(#shadow)">
+    <rect x="482" y="74" width="236" height="108" rx="28" fill="#ffffff" stroke="#93c5fd" stroke-opacity="0.72"/>
+    <circle cx="526" cy="128" r="28" fill="url(#accent)"/>
+    <text x="526" y="138" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="950">1</text>
+    <text x="574" y="136" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#111827" font-weight="950">Map</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="762" y="254" width="236" height="108" rx="28" fill="#ffffff" stroke="#93c5fd" stroke-opacity="0.72"/>
+    <circle cx="806" cy="308" r="28" fill="url(#accent)"/>
+    <text x="806" y="318" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="950">2</text>
+    <text x="854" y="316" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#111827" font-weight="950">Design</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="660" y="588" width="236" height="108" rx="28" fill="#ffffff" stroke="#93c5fd" stroke-opacity="0.72"/>
+    <circle cx="704" cy="642" r="28" fill="url(#accent)"/>
+    <text x="704" y="652" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="950">3</text>
+    <text x="752" y="650" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#111827" font-weight="950">Test</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="304" y="588" width="236" height="108" rx="28" fill="#ffffff" stroke="#93c5fd" stroke-opacity="0.72"/>
+    <circle cx="348" cy="642" r="28" fill="url(#accent)"/>
+    <text x="348" y="652" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="950">4</text>
+    <text x="396" y="650" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#111827" font-weight="950">Assess</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="202" y="254" width="236" height="108" rx="28" fill="#ffffff" stroke="#93c5fd" stroke-opacity="0.72"/>
+    <circle cx="246" cy="308" r="28" fill="url(#accent)"/>
+    <text x="246" y="318" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#ffffff" font-weight="950">5</text>
+    <text x="294" y="316" font-family="Segoe UI, Arial, sans-serif" font-size="25" fill="#111827" font-weight="950">Improve</text>
+  </g>
+  <path d="M968 562 C1034 610 1060 682 1028 744" fill="none" stroke="#14b8a6" stroke-width="12" stroke-linecap="round" opacity="0.46"/>
+  <path d="M1028 744 l-4 -48 l-38 29" fill="none" stroke="#14b8a6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.46"/>
+  <text x="96" y="820" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#263a57" font-weight="800">From knowledge to confident daily practice</text>
+</svg>

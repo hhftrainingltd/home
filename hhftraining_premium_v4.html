@@ -1,0 +1,2771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HHF Training | AI, Cyber Safety, CPD & Educational Consultancy</title>
+  <meta name="description" content="HHF Training provides AI training, cyber safety, CPD, assessment design, quality assurance consultancy and digital transformation support for schools, colleges, training providers and businesses across the UK." />
+
+  <style>
+    :root {
+      --ink: #111827;
+      --ink-2: #1f2937;
+      --paper: #f7f8f5;
+      --white: #ffffff;
+      --line: #d9ded8;
+      --muted: #667085;
+      --teal: #0f766e;
+      --teal-2: #14b8a6;
+      --amber: #d97706;
+      --berry: #8b1e3f;
+      --blue: #1d4ed8;
+      --shadow: 0 18px 55px rgba(17, 24, 39, 0.12);
+      --max: 1180px;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 248, 245, 0.94);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(17, 24, 39, 0.2);
+      background: var(--ink);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .brand .brand-mark {
+      display: grid;
+      color: var(--white);
+    }
+
+    .brand > span:not(.brand-mark) {
+      display: block;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1.03rem;
+      line-height: 1.1;
+    }
+
+    .brand > span:not(.brand-mark) > span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-top: 2px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: var(--ink-2);
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 12px;
+      border-radius: var(--radius);
+      font-size: 0.93rem;
+      font-weight: 650;
+    }
+
+    .menu a:hover {
+      background: rgba(15, 118, 110, 0.09);
+      color: var(--teal);
+    }
+
+    .nav-cta {
+      background: var(--ink);
+      color: var(--white) !important;
+      box-shadow: 0 10px 26px rgba(17, 24, 39, 0.18);
+    }
+
+    .nav-cta:hover {
+      background: var(--teal) !important;
+      color: var(--white) !important;
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      border-radius: var(--radius);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .mobile-toggle svg,
+    .icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: stretch;
+      background: var(--ink);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(17, 24, 39, 0.93) 0%, rgba(17, 24, 39, 0.78) 42%, rgba(17, 24, 39, 0.34) 74%, rgba(17, 24, 39, 0.62) 100%),
+        linear-gradient(0deg, rgba(17, 24, 39, 0.68), rgba(17, 24, 39, 0.04) 42%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      min-height: calc(100vh - 76px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(290px, 0.52fr);
+      align-items: center;
+      gap: 44px;
+      padding: 64px 0;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #b8fff5;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--teal-2);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(3rem, 7vw, 6.7rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+      font-weight: 850;
+      text-shadow: 0 12px 42px rgba(0, 0, 0, 0.32);
+    }
+
+    .hero h1 span {
+      color: #7dd3fc;
+    }
+
+    .mobile-break {
+      display: none;
+    }
+
+    .hero-copy p {
+      max-width: 720px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.14rem;
+    }
+
+    .hero-copy,
+    .proof-item > span:last-child {
+      min-width: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--teal-2);
+      color: #05201d;
+    }
+
+    .btn-primary:hover {
+      background: #5eead4;
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-proof {
+      align-self: center;
+      background: rgba(247, 248, 245, 0.95);
+      color: var(--ink);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.52);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .proof-heading {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+    }
+
+    .proof-heading strong {
+      display: block;
+      font-size: 1.15rem;
+      line-height: 1.2;
+    }
+
+    .proof-heading span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .proof-list {
+      display: grid;
+    }
+
+    .proof-item {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 12px;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+    }
+
+    .proof-item:last-child {
+      border-bottom: 0;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      background: rgba(15, 118, 110, 0.1);
+      color: var(--teal);
+    }
+
+    .proof-item strong,
+    .card h3,
+    .service-card h3,
+    .delivery-card h3,
+    .resource-card h3 {
+      display: block;
+      line-height: 1.2;
+    }
+
+    .proof-item span,
+    .card p,
+    .service-card p,
+    .delivery-card p,
+    .resource-card p,
+    .audience-card span,
+    .timeline-card span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .proof-item span span {
+      overflow-wrap: anywhere;
+    }
+
+    .stats-band {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+    }
+
+    .stat {
+      min-height: 128px;
+      padding: 26px;
+      background: var(--white);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--teal);
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.82fr 1fr;
+      align-items: end;
+      gap: 36px;
+      margin-bottom: 34px;
+    }
+
+    .section-label {
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin-top: 10px;
+      font-size: clamp(2rem, 4vw, 3.65rem);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 670px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .why {
+      background: var(--paper);
+    }
+
+    .why-grid,
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .card,
+    .delivery-card,
+    .resource-card {
+      min-height: 230px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 8px 24px rgba(17, 24, 39, 0.04);
+    }
+
+    .card h3,
+    .delivery-card h3,
+    .resource-card h3 {
+      margin-top: 18px;
+      font-size: 1.15rem;
+    }
+
+    .card p,
+    .delivery-card p,
+    .resource-card p {
+      margin-top: 10px;
+    }
+
+    .services {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .services .section-label {
+      color: #99f6e4;
+    }
+
+    .services .section-head p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .service-card {
+      min-height: 296px;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(94, 234, 212, 0.55);
+      background: rgba(20, 184, 166, 0.13);
+    }
+
+    .service-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.98), rgba(29, 78, 216, 0.78));
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    .service-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .service-code {
+      min-width: 48px;
+      height: 40px;
+      padding: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.12);
+      color: #ccfbf1;
+      font-weight: 850;
+    }
+
+    .service-number {
+      color: rgba(255, 255, 255, 0.38);
+      font-weight: 850;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      color: #99f6e4;
+      font-weight: 800;
+    }
+
+    .assessment {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .process-step {
+      min-height: 156px;
+      padding: 20px;
+      background: var(--white);
+      border-right: 1px solid var(--line);
+    }
+
+    .process-step:last-child {
+      border-right: 0;
+    }
+
+    .process-dot {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--ink);
+      font-weight: 850;
+      margin-bottom: 18px;
+    }
+
+    .process-step strong {
+      display: block;
+      line-height: 1.15;
+      font-size: 1.05rem;
+    }
+
+    .process-step span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .audiences {
+      background: #eef3ef;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .audience-card {
+      min-height: 136px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(17, 24, 39, 0.1);
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    .audience-card strong {
+      font-size: 1.06rem;
+    }
+
+    .delivery {
+      background: var(--paper);
+    }
+
+    .approach {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .approach .section-label {
+      color: #fbbf24;
+    }
+
+    .approach .section-head p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .approach-timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .timeline-card {
+      min-height: 170px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .timeline-card .num {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--amber);
+      color: #1f1605;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .timeline-card strong {
+      display: block;
+      font-size: 1.08rem;
+    }
+
+    .timeline-card span:last-child {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .resources {
+      background: var(--white);
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .resource-card {
+      min-height: 178px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(15, 118, 110, 0.42);
+    }
+
+    .cta {
+      padding: 0;
+      background: var(--paper);
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1fr 0.72fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transform: translateY(62px);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-copy,
+    .contact-panel {
+      padding: 38px;
+      background: var(--white);
+    }
+
+    .cta-copy h2 {
+      max-width: 690px;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .cta-copy p {
+      max-width: 640px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .cta .btn-secondary {
+      color: var(--ink);
+      border-color: var(--line);
+      background: var(--paper);
+    }
+
+    .contact-panel {
+      display: grid;
+      align-content: center;
+      gap: 12px;
+      background: #e8f4f2;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 98px 1fr;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(17, 24, 39, 0.11);
+    }
+
+    .contact-row:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-row strong {
+      color: var(--teal);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    footer {
+      padding: 112px 0 34px;
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-weight: 750;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+
+
+    /* Premium emphasis upgrades */
+    .why {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.18), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(29, 78, 216, 0.14), transparent 30%),
+        linear-gradient(180deg, #f7fbfa 0%, #eef6f4 100%);
+      border-top: 1px solid rgba(15, 118, 110, 0.12);
+      border-bottom: 1px solid rgba(15, 118, 110, 0.14);
+    }
+
+    .why::before {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(15, 118, 110, 0.1);
+      border-radius: 18px;
+      pointer-events: none;
+    }
+
+    .why .section-head {
+      position: relative;
+      padding: 34px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(232, 244, 242, 0.92));
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      box-shadow: 0 24px 70px rgba(17, 24, 39, 0.10);
+      overflow: hidden;
+    }
+
+    .why .section-label,
+    .assessment .section-label {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.12);
+      color: #0f5f59;
+      border: 1px solid rgba(15, 118, 110, 0.18);
+    }
+
+    .why .section-head h2,
+    .assessment .section-head h2 {
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .why .section-head p {
+      position: relative;
+      padding: 22px 24px;
+      border-radius: 16px;
+      color: #0b3b37;
+      font-size: clamp(1.12rem, 1.7vw, 1.42rem);
+      line-height: 1.5;
+      font-weight: 800;
+      background: linear-gradient(135deg, rgba(20, 184, 166, 0.18), rgba(29, 78, 216, 0.10));
+      border: 1px solid rgba(15, 118, 110, 0.22);
+      box-shadow: inset 4px 0 0 var(--teal), 0 14px 34px rgba(17, 24, 39, 0.08);
+    }
+
+    .why-grid .card,
+    .delivery-card,
+    .resource-card,
+    .audience-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(15, 118, 110, 0.14);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247, 250, 249, 0.98));
+      box-shadow: 0 16px 44px rgba(17, 24, 39, 0.08);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+    }
+
+    .why-grid .card::before,
+    .delivery-card::before,
+    .resource-card::before,
+    .audience-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--teal), var(--blue), var(--amber));
+    }
+
+    .why-grid .card::after,
+    .delivery-card::after,
+    .resource-card::after,
+    .audience-card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -54px;
+      top: -54px;
+      border-radius: 50%;
+      background: rgba(20, 184, 166, 0.10);
+      pointer-events: none;
+    }
+
+    .why-grid .card:hover,
+    .delivery-card:hover,
+    .resource-card:hover,
+    .audience-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(29, 78, 216, 0.28);
+      box-shadow: 0 26px 70px rgba(17, 24, 39, 0.14);
+      background: linear-gradient(180deg, #ffffff, #eef8f7);
+    }
+
+    .why-grid .card h3,
+    .delivery-card h3,
+    .resource-card h3,
+    .audience-card strong {
+      color: #102033;
+      font-size: 1.28rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .why-grid .card p,
+    .delivery-card p,
+    .resource-card p,
+    .audience-card span {
+      color: #344054;
+      font-size: 1rem;
+      line-height: 1.58;
+      font-weight: 560;
+    }
+
+    .why-grid .icon,
+    .delivery-card .icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(29, 78, 216, 0.12));
+      color: var(--teal);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      box-shadow: 0 12px 26px rgba(15, 118, 110, 0.12);
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transform-style: preserve-3d;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at var(--mx, 50%) var(--my, 20%), rgba(94, 234, 212, 0.28), transparent 26%),
+        linear-gradient(135deg, rgba(255,255,255,0.10), transparent 42%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      z-index: -1;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 18px 18px 18px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(153,246,228,0.85), transparent);
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.015);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .service-card:hover .service-code {
+      background: rgba(255,255,255,0.22);
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .service-card:hover .service-link {
+      transform: translateX(6px);
+    }
+
+    .service-code,
+    .service-link {
+      transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease;
+    }
+
+    .assessment {
+      position: relative;
+      background:
+        radial-gradient(circle at 88% 8%, rgba(29, 78, 216, 0.12), transparent 34%),
+        linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+      overflow: hidden;
+    }
+
+    .assessment .section-head {
+      padding: 30px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(29,78,216,0.08), rgba(20,184,166,0.08));
+      border: 1px solid rgba(29,78,216,0.16);
+      box-shadow: 0 18px 48px rgba(17, 24, 39, 0.08);
+    }
+
+    .assessment .section-label {
+      background: rgba(29,78,216,0.11);
+      color: #1d4ed8;
+      border-color: rgba(29,78,216,0.18);
+    }
+
+    .assessment .section-head p {
+      color: #24364f;
+      font-size: 1.12rem;
+      font-weight: 650;
+    }
+
+    .process {
+      position: relative;
+      gap: 18px;
+      border: 0;
+      overflow: visible;
+      background: transparent;
+    }
+
+    .process-step {
+      position: relative;
+      min-height: 182px;
+      border: 1px solid rgba(29,78,216,0.14) !important;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      box-shadow: 0 16px 42px rgba(17, 24, 39, 0.08);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .process-step:hover {
+      transform: translateY(-6px);
+      border-color: rgba(29,78,216,0.35) !important;
+      box-shadow: 0 26px 64px rgba(17, 24, 39, 0.13);
+    }
+
+    .process-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -26px;
+      width: 34px;
+      height: 16px;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, var(--teal), var(--blue));
+      clip-path: polygon(0 32%, 68% 32%, 68% 0, 100% 50%, 68% 100%, 68% 68%, 0 68%);
+      filter: drop-shadow(0 8px 10px rgba(29,78,216,0.22));
+      z-index: 5;
+    }
+
+    .process-dot {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      box-shadow: 0 12px 24px rgba(29,78,216,0.20);
+    }
+
+    .process-step strong {
+      color: #102033;
+      font-size: 1.18rem;
+      font-weight: 900;
+    }
+
+    .process-step span {
+      color: #344054;
+      font-weight: 600;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 70;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+      color: #ffffff;
+      font-weight: 900;
+      box-shadow: 0 18px 42px rgba(22, 163, 74, 0.34);
+      border: 1px solid rgba(255,255,255,0.36);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(22, 163, 74, 0.42);
+    }
+
+    .whatsapp-float span:first-child {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      font-size: 1rem;
+    }
+
+
+
+    /* HHF Premium V2 consistency system */
+    .authority {
+      background: linear-gradient(180deg, #eef6f4 0%, #ffffff 100%);
+      border-bottom: 1px solid rgba(15, 118, 110, 0.12);
+    }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .authority-card,
+    .support-card,
+    .premium-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(239,248,247,0.96));
+      box-shadow: 0 18px 52px rgba(17, 24, 39, 0.09);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+    }
+
+    .authority-card::before,
+    .support-card::before,
+    .premium-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--teal), var(--blue), var(--amber));
+    }
+
+    .authority-card::after,
+    .support-card::after,
+    .premium-card::after {
+      content: "";
+      position: absolute;
+      width: 138px;
+      height: 138px;
+      right: -68px;
+      top: -68px;
+      border-radius: 50%;
+      background: rgba(29, 78, 216, 0.10);
+      pointer-events: none;
+    }
+
+    .authority-card:hover,
+    .support-card:hover,
+    .premium-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(29, 78, 216, 0.30);
+      box-shadow: 0 28px 76px rgba(17, 24, 39, 0.14);
+    }
+
+    .authority-card {
+      min-height: 170px;
+      padding: 26px 20px 22px;
+    }
+
+    .authority-card strong {
+      display: block;
+      color: #0f5f59;
+      font-size: clamp(1.75rem, 3vw, 2.7rem);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .authority-card span {
+      display: block;
+      margin-top: 12px;
+      color: #24364f;
+      font-size: 0.96rem;
+      font-weight: 750;
+      line-height: 1.38;
+    }
+
+    .services {
+      background:
+        radial-gradient(circle at 8% 6%, rgba(20,184,166,0.20), transparent 30%),
+        radial-gradient(circle at 92% 14%, rgba(29,78,216,0.22), transparent 31%),
+        linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    }
+
+    .services .section-head {
+      padding: 34px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(20,184,166,0.08));
+      border: 1px solid rgba(255,255,255,0.13);
+      box-shadow: 0 26px 74px rgba(0,0,0,0.24);
+    }
+
+    .services .section-head h2 {
+      font-size: clamp(2.3rem, 5vw, 4.35rem);
+      font-weight: 950;
+      letter-spacing: -0.05em;
+    }
+
+    .service-card {
+      min-height: 338px;
+      padding: 28px;
+      border-radius: 20px;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,0.105), rgba(255,255,255,0.035)),
+        radial-gradient(circle at 90% 10%, rgba(20,184,166,0.16), transparent 36%);
+    }
+
+    .service-card.featured,
+    .service-card:hover {
+      background: linear-gradient(135deg, rgba(15, 118, 110, 0.98), rgba(29, 78, 216, 0.82));
+    }
+
+    .service-card .service-number {
+      position: absolute;
+      right: 18px;
+      bottom: 4px;
+      font-size: 5.7rem;
+      line-height: 1;
+      color: rgba(255,255,255,0.08);
+      font-weight: 950;
+      letter-spacing: -0.08em;
+      z-index: -1;
+    }
+
+    .service-card h3 {
+      font-size: clamp(1.28rem, 1.6vw, 1.62rem);
+      line-height: 1.12;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+
+    .service-card p {
+      margin-top: 14px;
+      color: rgba(255,255,255,0.78);
+      font-size: 1rem;
+      line-height: 1.58;
+      font-weight: 560;
+    }
+
+    .service-tag {
+      display: inline-flex;
+      width: max-content;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.11);
+      color: #ccfbf1;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .qa-support {
+      background:
+        radial-gradient(circle at 10% 10%, rgba(217,119,6,0.10), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f7fbfa 100%);
+      border-bottom: 1px solid rgba(15, 118, 110, 0.13);
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .support-card {
+      min-height: 210px;
+      padding: 26px;
+    }
+
+    .support-card .support-icon,
+    .premium-card .support-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(15,118,110,0.12), rgba(29,78,216,0.12));
+      color: var(--teal);
+      font-size: 1.15rem;
+      font-weight: 950;
+      border: 1px solid rgba(15,118,110,0.16);
+    }
+
+    .support-card h3,
+    .premium-card h3 {
+      margin-top: 18px;
+      color: #102033;
+      font-size: 1.24rem;
+      line-height: 1.16;
+      font-weight: 950;
+      letter-spacing: -0.025em;
+    }
+
+    .support-card p,
+    .premium-card p {
+      margin-top: 10px;
+      color: #344054;
+      font-size: 1rem;
+      line-height: 1.56;
+      font-weight: 560;
+    }
+
+    .assessment-tool-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .assessment-tool-grid .premium-card {
+      min-height: 160px;
+      padding: 22px;
+    }
+
+    .audiences .section-head,
+    .delivery .section-head,
+    .resources .section-head,
+    .qa-support .section-head,
+    .authority .section-head {
+      padding: 30px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(232,244,242,0.88));
+      border: 1px solid rgba(15,118,110,0.16);
+      box-shadow: 0 18px 48px rgba(17,24,39,0.07);
+    }
+
+    .audience-card,
+    .delivery-card,
+    .resource-card {
+      border-radius: 18px;
+    }
+
+    .audience-card {
+      min-height: 168px;
+      padding: 24px;
+    }
+
+    .delivery-card ul {
+      margin-top: 18px;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      color: #344054;
+      font-weight: 700;
+    }
+
+    .delivery-card li::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(15,118,110,0.10);
+    }
+
+    .resource-card {
+      min-height: 224px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .resource-card .read-more {
+      display: inline-flex;
+      margin-top: 18px;
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .consultant {
+      background:
+        radial-gradient(circle at 12% 10%, rgba(20,184,166,0.15), transparent 30%),
+        linear-gradient(180deg, #111827 0%, #0b1220 100%);
+      color: #ffffff;
+    }
+
+    .consultant-box {
+      display: grid;
+      grid-template-columns: 0.75fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+      padding: 34px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(20,184,166,0.08));
+      box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+    }
+
+    .consultant-name {
+      padding: 30px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(20,184,166,0.20), rgba(29,78,216,0.20));
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .consultant-name strong {
+      display: block;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.05em;
+    }
+
+    .consultant-name span {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255,255,255,0.78);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .consultant-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      list-style: none;
+    }
+
+    .consultant-list li {
+      padding: 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.82);
+      font-weight: 750;
+    }
+
+    .trusted {
+      background: #eef3ef;
+    }
+
+    .trusted-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .trusted-card {
+      min-height: 94px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 18px;
+      border-radius: 16px;
+      background: #ffffff;
+      border: 1px solid rgba(15,118,110,0.14);
+      box-shadow: 0 14px 34px rgba(17,24,39,0.07);
+      color: #102033;
+      font-weight: 900;
+    }
+
+    .whatsapp-float {
+      width: 64px;
+      height: 64px;
+      min-height: 64px;
+      padding: 0;
+      border-radius: 50%;
+      justify-content: center;
+      gap: 0;
+      animation: whatsappPulse 2.8s infinite;
+    }
+
+    .whatsapp-float span {
+      display: none !important;
+    }
+
+    .whatsapp-float svg {
+      width: 34px;
+      height: 34px;
+      fill: #ffffff;
+    }
+
+    @keyframes whatsappPulse {
+      0%, 100% { box-shadow: 0 18px 42px rgba(22, 163, 74, 0.34), 0 0 0 0 rgba(34,197,94,0.28); }
+      50% { box-shadow: 0 18px 42px rgba(22, 163, 74, 0.34), 0 0 0 12px rgba(34,197,94,0); }
+    }
+
+
+
+    /* Premium V3 heading and authority layout refinements */
+    .choice-card {
+      padding: 34px;
+      margin-bottom: 34px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(239,248,247,0.96));
+      border: 1px solid rgba(15,118,110,0.16);
+      box-shadow: 0 24px 70px rgba(17,24,39,0.10);
+    }
+
+    .choice-tag {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      margin-bottom: 20px;
+      color: #0f766e;
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+
+    .choice-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+      gap: clamp(28px, 5vw, 62px);
+      align-items: center;
+    }
+
+    .choice-split h2 {
+      margin: 0;
+      color: #102033;
+      font-size: clamp(2rem, 3.4vw, 3.35rem);
+      line-height: 1.03;
+      letter-spacing: -0.05em;
+      font-weight: 950;
+    }
+
+    .choice-split p {
+      margin: 0;
+      color: #344054;
+      font-size: clamp(1rem, 1.25vw, 1.18rem);
+      line-height: 1.62;
+      font-weight: 600;
+    }
+
+    .section-head.horizontal-head {
+      display: block;
+      padding: 32px 34px;
+    }
+
+    .section-head.horizontal-head > div {
+      max-width: none;
+    }
+
+    .section-head.horizontal-head h2 {
+      max-width: none;
+      width: 100%;
+      margin-top: 12px;
+      font-size: clamp(2rem, 3.6vw, 3.55rem);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+    }
+
+    .services .section-head.horizontal-head h2 {
+      font-size: clamp(2.25rem, 4vw, 4rem);
+    }
+
+    .section-head.horizontal-head p {
+      max-width: none;
+      width: 100%;
+      margin-top: 16px;
+      font-size: clamp(1.02rem, 1.25vw, 1.16rem);
+      line-height: 1.62;
+    }
+
+    .consultant-name strong {
+      max-width: 760px;
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      line-height: 1.04;
+    }
+
+    .whatsapp-float {
+      width: 64px !important;
+      height: 64px !important;
+      min-height: 64px !important;
+      padding: 0 !important;
+      border-radius: 50% !important;
+      display: grid !important;
+      place-items: center !important;
+    }
+
+    .whatsapp-float svg {
+      width: 34px;
+      height: 34px;
+      fill: #ffffff;
+    }
+
+    @media (max-width: 1040px) {
+      .hero-inner,
+      .section-head,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        align-items: end;
+        gap: 28px;
+      }
+
+      .hero-proof {
+        max-width: 680px;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process,
+      .approach-timeline,
+      .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .process-step {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .authority-grid { grid-template-columns: repeat(3, 1fr); }
+      .support-grid,
+      .assessment-tool-grid,
+      .trusted-grid { grid-template-columns: repeat(2, 1fr); }
+      .consultant-box { grid-template-columns: 1fr; }
+
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 44px;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .mobile-toggle {
+        display: grid;
+        place-items: center;
+        justify-self: end;
+      }
+
+      .menu {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 76px;
+        display: none;
+        padding: 12px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .menu.open {
+        display: grid;
+      }
+
+      .menu a {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .nav-cta {
+        justify-content: center !important;
+      }
+
+      .why-grid,
+      .delivery-grid,
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        min-height: 820px;
+        padding-top: 56px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: auto;
+        max-width: var(--max);
+        margin-left: 14px;
+        margin-right: 14px;
+      }
+
+      .brand > span:not(.brand-mark) > span {
+        display: none;
+      }
+
+      .hero-inner {
+        min-height: 760px;
+        padding-bottom: 24px;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+        font-size: 2.34rem;
+        line-height: 1.02;
+      }
+
+      .mobile-break {
+        display: inline;
+      }
+
+      .hero-copy p {
+        max-width: 34ch;
+        font-size: 1rem;
+      }
+
+      .proof-heading span,
+      .proof-item span span {
+        display: block;
+        max-width: 30ch;
+      }
+
+      .hero-copy,
+      .hero-proof {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hero-actions,
+      .footer-inner {
+        display: grid;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .stats,
+      .why-grid,
+      .service-grid,
+      .delivery-grid,
+      .process,
+      .audience-grid,
+      .approach-timeline,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why .section-head,
+      .assessment .section-head {
+        padding: 22px;
+      }
+
+      .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+        min-height: 48px;
+        padding: 0 14px;
+      }
+
+      .service-card.featured {
+        grid-column: auto;
+      }
+
+      .stat,
+      .card,
+      .delivery-card,
+      .resource-card,
+      .timeline-card,
+      .cta-copy,
+      .contact-panel {
+        padding: 22px;
+      }
+
+      .contact-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .authority-grid,
+      .support-grid,
+      .assessment-tool-grid,
+      .trusted-grid,
+      .consultant-list {
+        grid-template-columns: 1fr;
+      }
+
+      .consultant-box {
+        padding: 20px;
+      }
+
+      .whatsapp-float {
+        width: 56px;
+        height: 56px;
+        min-height: 56px;
+        padding: 0;
+      }
+
+    }
+
+
+    @media (max-width: 760px) {
+      .choice-card,
+      .section-head.horizontal-head {
+        padding: 24px;
+      }
+
+      .choice-split {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .section-head.horizontal-head h2 {
+        font-size: clamp(1.9rem, 8vw, 2.65rem);
+      }
+
+      .whatsapp-float {
+        width: 56px !important;
+        height: 56px !important;
+        min-height: 56px !important;
+        right: 14px !important;
+        bottom: 14px !important;
+      }
+    }
+
+  
+
+    /* Premium V4 benchmark card system based on uploaded visual reference */
+    .site-header {
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(29, 78, 216, 0.12);
+      box-shadow: 0 14px 34px rgba(17, 24, 39, 0.06);
+    }
+
+    .nav {
+      min-height: 82px;
+    }
+
+    .brand-mark {
+      border-radius: 15px;
+      background: linear-gradient(135deg, #0f766e, #1d4ed8);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 14px 28px rgba(29, 78, 216, 0.16);
+    }
+
+    .brand strong {
+      font-size: 1.08rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #101827;
+    }
+
+    .brand > span:not(.brand-mark) > span {
+      color: #667085;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .menu {
+      gap: 9px;
+      padding: 8px;
+      border-radius: 999px;
+      background: rgba(241, 247, 255, 0.84);
+      border: 1px solid rgba(29, 78, 216, 0.10);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.86), 0 10px 30px rgba(17,24,39,0.05);
+    }
+
+    .menu a {
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      color: #23344d;
+      font-size: 0.91rem;
+      font-weight: 850;
+      letter-spacing: -0.01em;
+      transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .menu a:hover {
+      transform: translateY(-2px);
+      color: #1d4ed8;
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 12px 28px rgba(29, 78, 216, 0.12);
+    }
+
+    .menu .nav-cta {
+      background: linear-gradient(135deg, #0f766e, #1d4ed8);
+      box-shadow: 0 14px 30px rgba(29, 78, 216, 0.22);
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    .menu .nav-cta:hover {
+      background: linear-gradient(135deg, #14b8a6, #2563eb) !important;
+      color: #ffffff !important;
+    }
+
+    .choice-card,
+    .section-head.horizontal-head,
+    .assessment .section-head,
+    .approach .section-head,
+    .consultant-box {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      align-items: center;
+      gap: clamp(28px, 4vw, 64px);
+      padding: clamp(34px, 5vw, 58px);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(29, 78, 216, 0.13), transparent 36%),
+        radial-gradient(circle at 0% 100%, rgba(20, 184, 166, 0.10), transparent 34%),
+        linear-gradient(135deg, #f5f9ff 0%, #eef7ff 46%, #f7fbff 100%);
+      border: 1px solid rgba(96, 165, 250, 0.36);
+      box-shadow: 0 24px 70px rgba(17, 24, 39, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+      overflow: hidden;
+      margin-bottom: 42px;
+    }
+
+    .choice-card::before,
+    .section-head.horizontal-head::before,
+    .assessment .section-head::before,
+    .approach .section-head::before,
+    .consultant-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      pointer-events: none;
+    }
+
+    .choice-card::after,
+    .section-head.horizontal-head::after,
+    .assessment .section-head::after,
+    .approach .section-head::after,
+    .consultant-box::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -90px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(29, 78, 216, 0.08);
+      pointer-events: none;
+    }
+
+    .choice-card > *,
+    .section-head.horizontal-head > *,
+    .assessment .section-head > *,
+    .approach .section-head > *,
+    .consultant-box > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .choice-tag,
+    .section-head.horizontal-head .section-label,
+    .assessment .section-head .section-label,
+    .approach .section-head .section-label,
+    .consultant-box .section-label {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: rgba(29, 78, 216, 0.10);
+      color: #1d4ed8;
+      border: 1px solid rgba(29, 78, 216, 0.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.86);
+      font-size: 0.82rem;
+      font-weight: 950;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+    }
+
+    .choice-split,
+    .section-head.horizontal-head,
+    .assessment .section-head,
+    .approach .section-head {
+      text-align: left;
+    }
+
+    .choice-card .choice-tag {
+      grid-column: 1 / -1;
+      margin-bottom: -18px;
+    }
+
+    .choice-split {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+      align-items: center;
+      gap: clamp(28px, 4vw, 58px);
+    }
+
+    .choice-split h2,
+    .section-head.horizontal-head h2,
+    .assessment .section-head h2,
+    .approach .section-head h2,
+    .consultant-name strong {
+      max-width: none;
+      color: #111827;
+      font-size: clamp(2.6rem, 5.4vw, 4.85rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      font-weight: 950;
+      margin-top: 28px;
+    }
+
+    .choice-split p,
+    .section-head.horizontal-head p,
+    .assessment .section-head p,
+    .approach .section-head p,
+    .consultant-name span,
+    .consultant-list {
+      max-width: none;
+      color: #26384f;
+      font-size: clamp(1.04rem, 1.5vw, 1.23rem);
+      line-height: 1.62;
+      font-weight: 720;
+      margin-top: 50px;
+    }
+
+    .section-head.horizontal-head > div,
+    .assessment .section-head > div,
+    .approach .section-head > div {
+      max-width: none;
+    }
+
+    .authority-card,
+    .support-card,
+    .audience-card,
+    .delivery-card,
+    .resource-card,
+    .trusted-card,
+    .timeline-card {
+      border-radius: 22px !important;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.10), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,249,255,0.96)) !important;
+      border: 1px solid rgba(96, 165, 250, 0.28) !important;
+      box-shadow: 0 18px 46px rgba(17, 24, 39, 0.09), inset 0 1px 0 rgba(255,255,255,0.88) !important;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+    }
+
+    .authority-card:hover,
+    .support-card:hover,
+    .audience-card:hover,
+    .delivery-card:hover,
+    .resource-card:hover,
+    .trusted-card:hover,
+    .timeline-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(29, 78, 216, 0.44) !important;
+      box-shadow: 0 28px 72px rgba(17, 24, 39, 0.14), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+      background: linear-gradient(180deg, #ffffff, #eef7ff) !important;
+    }
+
+    .authority-card strong,
+    .support-card h3,
+    .audience-card strong,
+    .delivery-card h3,
+    .resource-card h3,
+    .timeline-card strong {
+      color: #111827 !important;
+      font-weight: 950 !important;
+      letter-spacing: -0.03em;
+    }
+
+    .authority-card span,
+    .support-card p,
+    .audience-card span,
+    .delivery-card p,
+    .resource-card p,
+    .timeline-card span:last-child {
+      color: #344054 !important;
+      font-weight: 650 !important;
+      line-height: 1.58;
+    }
+
+    .approach {
+      background:
+        radial-gradient(circle at 12% 0%, rgba(20,184,166,0.16), transparent 32%),
+        radial-gradient(circle at 90% 10%, rgba(29,78,216,0.14), transparent 30%),
+        linear-gradient(180deg, #f7fbff 0%, #eef7ff 100%);
+      color: var(--ink);
+    }
+
+    .approach .section-head p {
+      color: #26384f !important;
+    }
+
+    .approach-timeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+      background: transparent;
+      border: 0;
+      overflow: visible;
+    }
+
+    .timeline-card {
+      position: relative;
+      min-height: 190px;
+      padding: 26px;
+    }
+
+    .timeline-card:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -28px;
+      width: 38px;
+      height: 16px;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, #14b8a6, #1d4ed8);
+      clip-path: polygon(0 32%, 70% 32%, 70% 0, 100% 50%, 70% 100%, 70% 68%, 0 68%);
+      filter: drop-shadow(0 8px 12px rgba(29,78,216,0.24));
+      z-index: 4;
+    }
+
+    .timeline-card .num {
+      background: linear-gradient(135deg, #14b8a6, #1d4ed8) !important;
+      color: #ffffff !important;
+      width: 46px;
+      height: 46px;
+      box-shadow: 0 12px 24px rgba(29,78,216,0.22);
+    }
+
+    .timeline-card strong {
+      display: block;
+      font-size: 1.24rem !important;
+      margin-top: 18px;
+    }
+
+    .trusted-card {
+      min-height: 94px;
+      display: grid;
+      place-items: center;
+      color: #111827;
+      font-weight: 900;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 1040px) {
+      .choice-card,
+      .choice-split,
+      .section-head.horizontal-head,
+      .assessment .section-head,
+      .approach .section-head,
+      .consultant-box {
+        grid-template-columns: 1fr;
+      }
+
+      .choice-split p,
+      .section-head.horizontal-head p,
+      .assessment .section-head p,
+      .approach .section-head p,
+      .consultant-name span,
+      .consultant-list {
+        margin-top: 0;
+      }
+
+      .approach-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .timeline-card:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .menu {
+        border-radius: 22px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .choice-card,
+      .section-head.horizontal-head,
+      .assessment .section-head,
+      .approach .section-head,
+      .consultant-box {
+        padding: 24px;
+        border-radius: 22px;
+      }
+
+      .choice-split h2,
+      .section-head.horizontal-head h2,
+      .assessment .section-head h2,
+      .approach .section-head h2,
+      .consultant-name strong {
+        font-size: 2.25rem;
+        line-height: 1.04;
+      }
+
+      .approach-timeline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="HHF Training home">
+        <span class="brand-mark">HHF</span>
+        <span>
+          <strong>HHF Training</strong>
+          <span>Professional training and support</span>
+        </span>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-controls="mainMenu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+      </button>
+
+      <ul class="menu" id="mainMenu">
+        <li><a href="#why">Why HHF</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#qa-support">QA Support</a></li>
+        <li><a href="#assessment">Assessment</a></li>
+        <li><a href="#audiences">Who We Support</a></li>
+        <li><a href="#qa-support">QA Support</a>
+        <a href="#resources">Resources</a></li>
+        <li><a class="nav-cta" href="#contact">Book Consultation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="HHF Training introduction">
+      <div class="hero-media" aria-hidden="true">
+        <img src="hhftraining-hero.png" alt="" />
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <div class="kicker">UK qualified professionals</div>
+          <h1>Practical training <span class="mobile-break"><br /></span>for the <span>AI era</span>.</h1>
+          <p>
+            HHF Training helps education, business and community organisations build confidence in AI,
+            cyber safety, CPD, assessment design, quality assurance and digital transformation.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">Explore Services</a>
+            <a href="mailto:info@hhftraining.co.uk" class="btn btn-secondary">Email HHF Training</a>
+          </div>
+        </div>
+
+        <aside class="hero-proof reveal" aria-label="Core training options">
+          <div class="proof-heading">
+            <strong>Built for real teams, real risks and real outcomes.</strong>
+            <span>Workshops, CPD programmes and consultancy shaped around your organisation.</span>
+          </div>
+          <div class="proof-list">
+            <div class="proof-item">
+              <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.4 7.8-8 9-4.6-1.2-8-4-8-9V7l8-4z"></path><path d="M9 12l2 2 4-5"></path></svg></span>
+              <span><strong>AI and digital confidence</strong><span>Safe, useful and responsible adoption across teams.</span></span>
+            </div>
+            <div class="proof-item">
+              <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16v-5"></path><path d="M12 16V8"></path><path d="M16 16v-3"></path></svg></span>
+              <span><strong>Assessment expertise</strong><span>Authentic, mapped and quality-assured assessment systems.</span></span>
+            </div>
+            <div class="proof-item">
+              <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"></path><path d="M7 7v10"></path><path d="M17 7v10"></path><path d="M4 17h16"></path><path d="M9 11h6"></path></svg></span>
+              <span><strong>Flexible delivery</strong><span>In-house, live online and bespoke consultancy support.</span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="stats-band" aria-label="HHF Training highlights">
+      <div class="container">
+        <div class="stats">
+          <div class="stat"><strong>20+</strong><span>Years of experience</span></div>
+          <div class="stat"><strong>650+</strong><span>Learners managed</span></div>
+          <div class="stat"><strong>UK</strong><span>Qualified staff</span></div>
+          <div class="stat"><strong>Online</strong><span>and in-house delivery</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="why" id="why">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-label">Why HHF Training</div>
+            <h2>Consultancy-led training with practical results.</h2>
+          </div>
+          <p>
+            We combine education leadership, assessment expertise, quality assurance,
+            AI capability, and cyber safety awareness into one focused professional offer.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.4 7.8-8 9-4.6-1.2-8-4-8-9V7l8-4z"></path><path d="M9 12l2 2 4-5"></path></svg></span>
+            <h3>UK Qualified Experts</h3>
+            <p>Training delivered by professionals with UK teaching, assessment, IQA, leadership, AI and cybersecurity expertise.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16v-5"></path><path d="M12 16V8"></path><path d="M16 16v-3"></path></svg></span>
+            <h3>Practical Outcomes</h3>
+            <p>Every session is designed around real workplace tasks, safer practice, confidence and measurable improvement.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"></path><path d="M7 7v10"></path><path d="M17 7v10"></path><path d="M4 17h16"></path><path d="M9 11h6"></path></svg></span>
+            <h3>Flexible Delivery</h3>
+            <p>Choose in-house training, live online delivery, hybrid programmes or bespoke consultancy for your organisation.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20"></path><path d="M2 12h20"></path><path d="M4.9 4.9l14.2 14.2"></path><path d="M19.1 4.9 4.9 19.1"></path></svg></span>
+            <h3>AI and Digital Focus</h3>
+            <p>We help staff understand AI safely, use it responsibly and apply it in education, business and daily work.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"></path><path d="M8 8h8"></path><path d="M8 12h8"></path><path d="M8 16h5"></path></svg></span>
+            <h3>Assessment Expertise</h3>
+            <p>Support for assessment design, mapping tools, evidence tracking, AI-resilient assessment and quality assurance.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18c4-9 12-9 16 0"></path><path d="M7 18c2.5-5 7.5-5 10 0"></path><path d="M12 18v3"></path></svg></span>
+            <h3>Future-Ready Support</h3>
+            <p>AI readiness, policy development, cyber awareness and digital transformation planning for modern organisations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="authority" id="choose-hhf">
+      <div class="container">
+        <div class="choice-card reveal">
+          <div class="choice-tag">Why Organisations Choose HHF</div>
+          <div class="choice-split">
+            <h2>Professional credibility built around real education, AI and quality practice.</h2>
+            <p>HHF Training brings together sector knowledge, leadership experience and practical implementation support for organisations that need training with visible outcomes.</p>
+          </div>
+        </div>
+
+        <div class="authority-grid">
+          <div class="authority-card reveal"><strong>20+</strong><span>Years of education, IT and leadership experience</span></div>
+          <div class="authority-card reveal"><strong>650+</strong><span>Learners managed in structured education settings</span></div>
+          <div class="authority-card reveal"><strong>UK</strong><span>Qualified teaching, assessment and IQA expertise</span></div>
+          <div class="authority-card reveal"><strong>AI</strong><span>Practical AI training for modern organisations</span></div>
+          <div class="authority-card reveal"><strong>QA</strong><span>Assessment, mapping and quality assurance support</span></div>
+          <div class="authority-card reveal"><strong>CPD</strong><span>Consultancy-led training designed for measurable results</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head horizontal-head reveal">
+          <div>
+            <div class="section-label">Flagship Services</div>
+            <h2>Seven specialist services designed for the AI era.</h2>
+          </div>
+          <p>
+            Each service can be delivered as a short workshop, CPD programme,
+            consultancy package or bespoke organisational solution.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <a href="ai-training-education.html" class="service-card reveal">
+            <div class="service-top"><span class="service-code">AI</span><span class="service-number">01</span></div>
+            <div><span class="service-tag">Education</span><h3>AI Training for Education</h3><p>Build staff confidence, strengthen responsible AI use and support safer classroom, assessment and planning practice.</p><span class="service-link">Learn more</span></div>
+          </a>
+
+          <a href="ai-training-business.html" class="service-card reveal">
+            <div class="service-top"><span class="service-code">AI</span><span class="service-number">02</span></div>
+            <div><span class="service-tag">Business</span><h3>AI Training for Business</h3><p>Improve productivity, automate routine work and help teams apply AI confidently in real workplace situations.</p><span class="service-link">Learn more</span></div>
+          </a>
+
+          <a href="cyber-safety-training.html" class="service-card reveal">
+            <div class="service-top"><span class="service-code">CS</span><span class="service-number">03</span></div>
+            <div><span class="service-tag">Cyber Safety</span><h3>Cyber Safety Training</h3><p>Reduce everyday cyber risk through practical awareness training for staff, families, learners and organisations.</p><span class="service-link">Learn more</span></div>
+          </a>
+
+          <a href="cpd-professional-development.html" class="service-card reveal">
+            <div class="service-top"><span class="service-code">CPD</span><span class="service-number">04</span></div>
+            <div><span class="service-tag">Professional Development</span><h3>CPD & Professional Development</h3><p>Deliver targeted professional learning that improves confidence, compliance, practice and organisational capability.</p><span class="service-link">Learn more</span></div>
+          </a>
+
+          <a href="assessment-design-resources.html" class="service-card featured reveal">
+            <div class="service-top"><span class="service-code">AD</span><span class="service-number">05</span></div>
+            <div><span class="service-tag">Assessment Excellence</span><h3>Assessment Design & Educational Resources</h3><p>Create robust assessments, mapping tools, evidence systems, trackers and AI-resilient assessment strategies.</p><span class="service-link">Learn more</span></div>
+          </a>
+
+          <a href="quality-assurance-consultancy.html" class="service-card reveal">
+            <div class="service-top"><span class="service-code">QA</span><span class="service-number">06</span></div>
+            <div><span class="service-tag">Quality Assurance</span><h3>Quality Assurance & Educational Consultancy</h3><p>Strengthen IQA systems, standardisation, compliance, learner outcomes and continuous quality improvement.</p><span class="service-link">Learn more</span></div>
+          </a>
+
+          <a href="ai-readiness-digital-transformation.html" class="service-card reveal">
+            <div class="service-top"><span class="service-code">DX</span><span class="service-number">07</span></div>
+            <div><span class="service-tag">Digital Transformation</span><h3>AI Readiness & Digital Transformation</h3><p>Assess readiness, review risk, develop policy and build practical roadmaps for responsible AI adoption.</p><span class="service-link">Learn more</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="qa-support" id="qa-support">
+      <div class="container">
+        <div class="section-head horizontal-head reveal">
+          <div>
+            <div class="section-label">HHF Training and Support Assessment Design</div>
+            <h2>Assessment design and quality assurance support for modern providers.</h2>
+          </div>
+          <p>Support for centres, colleges and training providers that need stronger assessment tools, clearer evidence systems and AI-aware quality assurance practice.</p>
+        </div>
+
+        <div class="support-grid">
+          <article class="support-card reveal"><span class="support-icon">AD</span><h3>Assessment Design</h3><p>Design valid, realistic and level-appropriate assessment tasks linked clearly to learning outcomes and assessment criteria.</p></article>
+          <article class="support-card reveal"><span class="support-icon">MAP</span><h3>Qualification Mapping</h3><p>Create clear mapping tools that connect units, ACs, evidence sources, assessor judgement and IQA sampling.</p></article>
+          <article class="support-card reveal"><span class="support-icon">TRK</span><h3>Evidence Tracking Systems</h3><p>Develop practical trackers for evidence references, assessor feedback, areas for improvement and IQA notes.</p></article>
+          <article class="support-card reveal"><span class="support-icon">IQA</span><h3>IQA & Standardisation</h3><p>Strengthen internal quality assurance through sampling, standardisation, documentation and action-focused improvement.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="assessment" id="assessment">
+      <div class="container">
+        <div class="section-head horizontal-head reveal">
+          <div>
+            <div class="section-label">AI and Assessment Excellence</div>
+            <h2>Assessment that remains valid in the age of AI.</h2>
+          </div>
+          <p>
+            HHF Training can support assessment design, qualification mapping, evidence tracking,
+            professional discussion templates, observation records, IQA systems and AI-resilient assessment strategies.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="process-step reveal"><div class="process-dot">1</div><strong>Review</strong><span>Current assessment methods</span></div>
+          <div class="process-step reveal"><div class="process-dot">2</div><strong>Identify</strong><span>AI and authenticity risks</span></div>
+          <div class="process-step reveal"><div class="process-dot">3</div><strong>Redesign</strong><span>Authentic assessment tasks</span></div>
+          <div class="process-step reveal"><div class="process-dot">4</div><strong>Map</strong><span>LOs, ACs and evidence</span></div>
+          <div class="process-step reveal"><div class="process-dot">5</div><strong>Quality Assure</strong><span>IQA and standardisation</span></div>
+          <div class="process-step reveal"><div class="process-dot">6</div><strong>Improve</strong><span>Future-ready assessment</span></div>
+        </div>
+
+        <div class="assessment-tool-grid">
+          <article class="premium-card reveal"><span class="support-icon">01</span><h3>Mapping Tools</h3><p>Clear LO, AC and evidence mapping for audit-ready assessment practice.</p></article>
+          <article class="premium-card reveal"><span class="support-icon">02</span><h3>Observation Records</h3><p>Structured observation documents for vocational and practical assessment.</p></article>
+          <article class="premium-card reveal"><span class="support-icon">03</span><h3>Professional Discussion</h3><p>Templates that capture authentic learner understanding and assessor judgement.</p></article>
+          <article class="premium-card reveal"><span class="support-icon">04</span><h3>AI-Resilient Tasks</h3><p>Assessment designs that protect validity, authenticity and learner ownership.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="audiences" id="audiences">
+      <div class="container">
+        <div class="section-head horizontal-head reveal">
+          <div>
+            <div class="section-label">Who We Support</div>
+            <h2>Specialist training for education, business and communities.</h2>
+          </div>
+          <p>
+            Services can be tailored for strategic leaders, teaching teams, assessors,
+            IQAs, operational staff, parents, managers and frontline professionals.
+          </p>
+        </div>
+
+        <div class="audience-grid">
+          <div class="audience-card reveal"><strong>Schools</strong><span>Build AI-ready teaching teams and improve digital confidence across staff, learners and parents.</span></div>
+          <div class="audience-card reveal"><strong>Colleges</strong><span>Strengthen assessment quality, staff CPD and responsible AI practice across departments.</span></div>
+          <div class="audience-card reveal"><strong>Universities</strong><span>Support academic integrity, AI readiness and professional development for higher education teams.</span></div>
+          <div class="audience-card reveal"><strong>Training Providers</strong><span>Improve assessor practice, IQA systems, evidence mapping, compliance and learner outcomes.</span></div>
+          <div class="audience-card reveal"><strong>Businesses</strong><span>Develop practical AI productivity, safer digital working and stronger cyber awareness.</span></div>
+          <div class="audience-card reveal"><strong>Councils</strong><span>Support workforce development, community digital confidence and cyber safety awareness.</span></div>
+          <div class="audience-card reveal"><strong>Charities</strong><span>Deliver accessible AI, digital confidence and online safety support for community impact.</span></div>
+          <div class="audience-card reveal"><strong>Community Groups</strong><span>Provide simple, practical AI and cyber safety sessions for everyday digital life.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="delivery" id="delivery">
+      <div class="container">
+        <div class="section-head horizontal-head reveal">
+          <div>
+            <div class="section-label">Delivery Options</div>
+            <h2>Flexible training built around your organisation.</h2>
+          </div>
+          <p>Choose the format that works best for your staff, learners, managers or community.</p>
+        </div>
+
+        <div class="delivery-grid">
+          <article class="delivery-card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V5h14v16"></path><path d="M9 9h2"></path><path d="M13 9h2"></path><path d="M9 13h2"></path><path d="M13 13h2"></path></svg></span>
+            <h3>In-House Training</h3>
+            <p>Delivered at your site with examples shaped around your organisation, staff and learners.</p><ul><li>Tailored content</li><li>Practical workshops</li><li>Team engagement</li></ul>
+          </article>
+
+          <article class="delivery-card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H4z"></path><path d="M8 21h8"></path><path d="M12 16v5"></path></svg></span>
+            <h3>Live Online Training</h3>
+            <p>Live virtual training for teams across different locations with practical demonstrations and follow-up actions.</p><ul><li>Flexible scheduling</li><li>Multi-site delivery</li><li>Interactive learning</li></ul>
+          </article>
+
+          <article class="delivery-card reveal">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l4 7 7 1-5 5 1 7-7-3-7 3 1-7-5-5 7-1 4-7z"></path></svg></span>
+            <h3>Bespoke Consultancy</h3>
+            <p>Focused consultancy for strategy, implementation, policy, assessment design and quality improvement.</p><ul><li>Strategy support</li><li>Policy development</li><li>Implementation planning</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="container">
+        <div class="section-head horizontal-head reveal">
+          <div>
+            <div class="section-label">Our Approach</div>
+            <h2>From first conversation to measurable improvement.</h2>
+          </div>
+          <p>
+            We help you understand needs, design the right solution, deliver professionally
+            and support improvement after training.
+          </p>
+        </div>
+
+        <div class="approach-timeline">
+          <div class="timeline-card reveal"><span class="num">1</span><strong>Consultation</strong><span>Understand goals and priorities</span></div>
+          <div class="timeline-card reveal"><span class="num">2</span><strong>Needs Analysis</strong><span>Identify risks and skills gaps</span></div>
+          <div class="timeline-card reveal"><span class="num">3</span><strong>Solution Design</strong><span>Build tailored training or support</span></div>
+          <div class="timeline-card reveal"><span class="num">4</span><strong>Delivery</strong><span>Interactive, practical and focused</span></div>
+          <div class="timeline-card reveal"><span class="num">5</span><strong>Follow-Up</strong><span>Resources, actions and improvement</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources" id="resources">
+      <div class="container">
+        <div class="section-head horizontal-head reveal">
+          <div>
+            <div class="section-label">Resources Centre</div>
+            <h2>Free guides for safer AI, stronger assessment and better digital practice.</h2>
+          </div>
+          <p>
+            Resource pages can improve SEO, generate enquiries and provide value to schools,
+            colleges, businesses and training providers.
+          </p>
+        </div>
+
+        <div class="resource-grid">
+          <a href="ai-guide-for-teachers.html" class="resource-card reveal"><div><h3>AI Guide for Teachers</h3><p>Simple guidance for classroom and planning use.</p></div><span class="read-more">Read Guide</span></a>
+          <a href="ai-guide-for-businesses.html" class="resource-card reveal"><div><h3>AI Guide for Businesses</h3><p>Workplace productivity and safe AI use.</p></div><span class="read-more">Read Guide</span></a>
+          <a href="cyber-safety-guide.html" class="resource-card reveal"><div><h3>Cyber Safety Guide</h3><p>Practical online safety for staff and families.</p></div><span class="read-more">Read Guide</span></a>
+          <a href="assessment-design-guide.html" class="resource-card reveal"><div><h3>Assessment Design Guide</h3><p>Designing valid assessment in the AI era.</p></div><span class="read-more">Read Guide</span></a>
+          <a href="ai-readiness-checklist.html" class="resource-card reveal"><div><h3>AI Readiness Checklist</h3><p>Check policy, training and governance gaps.</p></div><span class="read-more">Read Guide</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="consultant" id="consultant">
+      <div class="container">
+        <div class="consultant-box reveal">
+          <div class="consultant-name">
+            <div class="section-label">Meet The HHF Training Team</div>
+            <strong>Our training staff is highly qualified</strong>
+            <span>Education leadership, assessment design, quality assurance, AI and cybersecurity training expertise across the team.</span>
+          </div>
+          <ul class="consultant-list">
+            <li>20+ years international education and IT experience</li>
+            <li>UK QTLS, teaching and professional training background</li>
+            <li>IQA, Lead IQA, assessment and quality assurance expertise</li>
+            <li>AI and cybersecurity focused professional development</li>
+            <li>Curriculum, mapping and evidence tracking support</li>
+            <li>Consultancy-led delivery for practical organisational outcomes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="trusted" id="trusted">
+      <div class="container">
+        <div class="section-head horizontal-head reveal">
+          <div>
+            <div class="section-label">Trusted Support For</div>
+            <h2>Built for the organisations shaping learning, skills and safer digital practice.</h2>
+          </div>
+          <p>HHF Training is positioned to support education providers, public-facing organisations, businesses and community partners with practical training and consultancy.</p>
+        </div>
+        <div class="trusted-grid">
+          <div class="trusted-card reveal">Schools</div>
+          <div class="trusted-card reveal">Colleges</div>
+          <div class="trusted-card reveal">Universities</div>
+          <div class="trusted-card reveal">Training Providers</div>
+          <div class="trusted-card reveal">Businesses</div>
+          <div class="trusted-card reveal">Councils</div>
+          <div class="trusted-card reveal">Charities</div>
+          <div class="trusted-card reveal">Community Organisations</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="cta-copy">
+            <div class="section-label">Contact</div>
+            <h2>Ready to future-proof your organisation?</h2>
+            <p>
+              Speak with HHF Training about AI training, cyber safety, CPD, assessment design,
+              quality assurance or digital transformation support.
+            </p>
+            <div class="hero-actions">
+              <a href="mailto:info@hhftraining.co.uk" class="btn btn-primary">Email Us</a>
+              <a href="tel:02034321665" class="btn btn-secondary">Call 020 3432 1665</a>
+              <a href="https://wa.me/447360503959" class="btn btn-secondary" target="_blank" rel="noopener">WhatsApp +44 7360 503959</a>
+            </div>
+          </div>
+
+          <div class="contact-panel">
+            <div class="contact-row"><strong>Telephone</strong><span>020 3432 1665</span></div>
+            <div class="contact-row"><strong>Email</strong><span>info@hhftraining.co.uk</span></div>
+            <div class="contact-row"><strong>WhatsApp</strong><span><a href="https://wa.me/447360503959" target="_blank" rel="noopener">+44 7360 503959</a></span></div>
+            <div class="contact-row"><strong>Website</strong><span>www.hhftraining.co.uk</span></div>
+            <div class="contact-row"><strong>Delivery</strong><span>In-house, online and bespoke consultancy</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/447360503959" target="_blank" rel="noopener" aria-label="Contact HHF Training on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.02 3.2c-7.05 0-12.78 5.72-12.78 12.76 0 2.25.59 4.45 1.72 6.39L3.13 29l6.82-1.79a12.75 12.75 0 0 0 6.07 1.55h.01c7.04 0 12.77-5.72 12.77-12.76S23.06 3.2 16.02 3.2zm0 23.4h-.01c-1.88 0-3.72-.51-5.33-1.47l-.38-.23-4.05 1.06 1.08-3.94-.25-.4a10.58 10.58 0 0 1-1.62-5.66c0-5.81 4.74-10.54 10.56-10.54 2.82 0 5.47 1.1 7.46 3.09a10.46 10.46 0 0 1 3.1 7.45c0 5.81-4.74 10.54-10.56 10.54zm5.79-7.9c-.32-.16-1.87-.92-2.16-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.19-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.71-.97-2.34-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.32-1.11 1.08-1.11 2.63s1.14 3.06 1.29 3.27c.16.21 2.24 3.42 5.42 4.79.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.87-.76 2.14-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.61-.37z"></path></svg>
+  </a>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>Copyright 2026 HHF Training. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#top">Home</a>
+        <a href="#services">Services</a>
+        <a href="#qa-support">QA Support</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("mobileToggle");
+      var menu = document.getElementById("mainMenu");
+
+      if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+          var isOpen = menu.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        menu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            menu.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      var revealItems = document.querySelectorAll(".reveal");
+
+      if (!("IntersectionObserver" in window)) {
+        revealItems.forEach(function (item) {
+          item.classList.add("show");
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      revealItems.forEach(function (item) {
+        observer.observe(item);
+      });
+
+      document.querySelectorAll(".service-card").forEach(function (card) {
+        card.addEventListener("mousemove", function (event) {
+          var rect = card.getBoundingClientRect();
+          var x = ((event.clientX - rect.left) / rect.width) * 100;
+          var y = ((event.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty("--mx", x + "%");
+          card.style.setProperty("--my", y + "%");
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>
