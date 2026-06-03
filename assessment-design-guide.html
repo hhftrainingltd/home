@@ -810,6 +810,45 @@ section.neon-contact a {
 }
 </style>
 
+<style id="hhf-guide-contact-fix">
+/* Guide-page contact finish: keep the card fully visible and separate from the footer. */
+section.cta.neon-contact {
+  padding: 68px 0 54px !important;
+  margin-top: 18px !important;
+}
+
+section.cta.neon-contact .neon-contact-box {
+  min-height: auto !important;
+  transform: none !important;
+}
+
+section.cta.neon-contact .neon-contact-left,
+section.cta.neon-contact .neon-contact-panel {
+  padding-top: clamp(34px, 4vw, 54px) !important;
+  padding-bottom: clamp(34px, 4vw, 54px) !important;
+}
+
+section.cta.neon-contact + footer,
+footer {
+  position: relative !important;
+  z-index: 3 !important;
+  padding: 42px 0 42px !important;
+  margin-top: 0 !important;
+  background: #eaf6ff !important;
+}
+
+@media (max-width: 640px) {
+  section.cta.neon-contact {
+    padding: 48px 0 36px !important;
+    margin-top: 8px !important;
+  }
+
+  section.cta.neon-contact .neon-contact-box {
+    transform: none !important;
+  }
+}
+</style>
+
 </head>
 <body>
   <header class="site-header">
