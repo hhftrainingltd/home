@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How AI Can Support Learners Living With PTSD | LEAF Article</title>
+<meta name="description" content="A LEAF article on responsible AI support for learners living with PTSD, focusing on predictable routines, small steps, reminders and support pathways.">
+<style>
+:root{--bg:#eaf4ff;--bg2:#fff7df;--primary:#0b2f6b;--primary2:#1455a3;--gold:#f4c542;--orange:#ff7a18;--purple:#5b1d91;--text:#172033;--muted:#5f6b7a;--shadow:0 22px 55px rgba(11,47,107,0.18);}
+*{box-sizing:border-box;} html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--gold) rgba(11,47,107,0.18);}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:var(--text);min-height:100vh;background:radial-gradient(circle at top left,#dbeafe 0,transparent 32%),radial-gradient(circle at top right,#fff0b8 0,transparent 30%),linear-gradient(135deg,var(--bg),var(--bg2));overflow-x:hidden;line-height:1.72;}
+body::-webkit-scrollbar{width:11px;} body::-webkit-scrollbar-track{background:rgba(11,47,107,0.10);border-radius:999px;} body::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--gold),var(--orange),var(--primary2));border-radius:999px;border:3px solid rgba(255,255,255,0.75);}
+.wrapper{width:min(1180px,92%);margin:0 auto;padding:0 0 36px;}
+.top-nav{display:flex;justify-content:flex-end;gap:12px;padding-top:18px;}
+.icon-btn{text-decoration:none;width:64px;height:64px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,0.86),rgba(240,248,255,0.96));border-radius:50%;border:3px solid var(--gold);box-shadow:0 0 0 4px rgba(122,43,194,0.42),0 14px 32px rgba(11,47,107,0.24),inset 0 1px 0 rgba(255,255,255,0.95);backdrop-filter:blur(10px);transition:all .25s ease;position:relative;overflow:hidden;}
+.icon-btn::before{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.78) 0%,rgba(255,255,255,.15) 42%,transparent 70%);}
+.icon-btn svg{width:31px;height:31px;fill:var(--primary2);position:relative;z-index:2;filter:drop-shadow(0 2px 2px rgba(0,0,0,.16));}
+.icon-btn:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 0 0 6px rgba(244,197,66,0.58),0 22px 48px rgba(11,47,107,0.34),inset 0 1px 0 rgba(255,255,255,1);}
+.hero{margin-top:-54px;text-align:center;padding:0 18px 20px;}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.78);border:1px solid rgba(20,85,163,.16);color:var(--primary);font-weight:900;box-shadow:0 12px 28px rgba(11,47,107,.12);margin-bottom:18px;}
+.hero h1{margin:0;font-size:clamp(40px,6vw,76px);line-height:1;color:var(--primary);font-weight:950;letter-spacing:-1.4px;}
+.hero h1 span{color:var(--orange);} .hero p{max-width:940px;margin:24px auto 0;color:#4e5868;font-size:clamp(20px,2.4vw,31px);line-height:1.36;}
+.meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px;}
+.meta-pill{display:inline-flex;align-items:center;border-radius:999px;padding:9px 14px;background:rgba(255,255,255,.82);border:1px solid rgba(20,85,163,.16);color:var(--primary);font-weight:900;box-shadow:0 8px 20px rgba(11,47,107,.08);}
+.nav-strip{position:sticky;top:0;z-index:20;margin:22px 0;background:rgba(255,255,255,.78);border:1px solid rgba(20,85,163,.14);border-radius:999px;box-shadow:0 16px 38px rgba(11,47,107,.12);backdrop-filter:blur(14px);padding:10px;display:flex;gap:8px;overflow:auto;}
+.nav-strip a{white-space:nowrap;text-decoration:none;color:var(--primary);font-weight:850;padding:10px 14px;border-radius:999px;} .nav-strip a:hover{background:linear-gradient(135deg,var(--primary),var(--primary2));color:white;}
+.panel{background:rgba(255,255,255,.74);border:1px solid rgba(20,85,163,.16);border-radius:36px;padding:34px;box-shadow:var(--shadow);backdrop-filter:blur(16px);margin-top:22px;}
+.feature-image{background:linear-gradient(180deg,#ffffff,#f8fbff);border:1px solid rgba(20,85,163,.20);border-radius:30px;padding:14px;box-shadow:0 24px 60px rgba(11,47,107,.18);overflow:hidden;} .feature-image img{width:100%;display:block;border-radius:22px;}
+.article-card{background:linear-gradient(180deg,#ffffff,#f8fbff);border:1px solid rgba(20,85,163,.22);border-left:8px solid var(--gold);border-radius:30px;padding:32px;box-shadow:0 24px 60px rgba(11,47,107,.18);}
+.article-card h2{margin:0 0 16px;color:var(--primary);font-size:clamp(28px,3.4vw,44px);line-height:1.1;font-weight:950;} .article-card h3{margin:28px 0 12px;color:var(--purple);font-size:clamp(22px,2.4vw,30px);line-height:1.18;font-weight:950;}
+.article-card p{color:#3f4a59;font-size:1.06rem;margin:0 0 18px;} .article-card ul{margin:10px 0 20px;padding-left:24px;} .article-card li{margin:8px 0;color:#4b5563;font-size:1.03rem;}
+.quote{margin:26px 0;padding:24px 26px;border-radius:0 24px 24px 0;border-left:8px solid var(--orange);background:linear-gradient(180deg,#fffdf5,#ffffff);box-shadow:0 18px 40px rgba(11,47,107,.12);color:#344054;font-style:italic;font-size:1.15rem;font-weight:700;}
+.key-box{margin:24px 0;padding:24px;border-radius:24px;background:linear-gradient(135deg,rgba(11,47,107,.96),rgba(20,85,163,.92));color:white;box-shadow:0 22px 45px rgba(11,47,107,.24);} .key-box h3{color:var(--gold);margin:0 0 10px;} .key-box p,.key-box li{color:white;}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;} .mini-card{background:linear-gradient(180deg,#ffffff,#f8fbff);border:1px solid rgba(20,85,163,.20);border-left:7px solid var(--gold);border-radius:24px;padding:22px;box-shadow:0 18px 42px rgba(11,47,107,.12);} .mini-card h3{margin:0 0 10px;color:var(--primary);font-size:21px;line-height:1.2;} .mini-card p{color:var(--muted);font-size:15.5px;line-height:1.65;}
+.action-panel{background:linear-gradient(180deg,#fffdf5,#ffffff);border:1px solid rgba(244,197,66,.55);border-left:8px solid var(--orange);border-radius:30px;padding:30px;box-shadow:0 24px 60px rgba(11,47,107,.15);} .action-panel h2{color:var(--primary);margin:0 0 14px;font-size:clamp(30px,3.6vw,46px);}
+.sources a{color:var(--primary2);font-weight:800;} .section{scroll-margin-top:100px;} .footer-container{text-align:center;margin:34px 0 0;} footer{display:inline-block;background:rgba(255,255,255,.78);border-top:3px solid var(--gold);color:#46505f;padding:12px 24px;border-radius:18px;font-size:14px;font-weight:800;font-style:italic;box-shadow:0 12px 28px rgba(11,47,107,.14);}
+@media(max-width:1000px){.grid-2{grid-template-columns:1fr;}} @media(max-width:720px){.hero{margin-top:-20px;}.hero p{font-size:20px;}.panel{padding:20px;border-radius:28px;}.article-card,.action-panel{padding:22px;}.nav-strip{border-radius:24px;}.hero h1{letter-spacing:0;}}
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="top-nav">
+    <a class="icon-btn" href="hhftraining_premium_v3.html" aria-label="Back to HHF Training" title="Back to HHF Training"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 2.4a1.8 1.8 0 0 1 2.4 0l8 7.2c.4.4.5 1 .1 1.5-.3.4-.9.5-1.4.2l-.9-.8V20a1.5 1.5 0 0 1-1.5 1.5h-4v-6h-3v6h-4A1.5 1.5 0 0 1 5 20v-9.5l-.9.8c-.5.3-1.1.2-1.4-.2-.4-.5-.3-1.1.1-1.5l8-7.2z"/></svg></a>
+    <a class="icon-btn" href="leaf-ai-support-ptsd-learners.docx" aria-label="Download Word article" title="Download Word article"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v13A2.5 2.5 0 0 1 17.5 21h-11A2.5 2.5 0 0 1 4 18.5v-13zm3 1v3h10v-3H7zm0 5v2h10v-2H7zm0 4v2h7v-2H7z"/></svg></a>
+  </div>
+  <section class="hero">
+    <div class="hero-badge">AI, Trauma-Informed Learning and Learner Support</div>
+    <h1>How AI Can Support Learners <span>Living With PTSD</span></h1>
+    <p>AI will not treat PTSD, but it can help create more predictable, flexible and supportive learning experiences when used with care.</p>
+    <div class="meta-row"><span class="meta-pill">PTSD</span><span class="meta-pill">AI Support</span><span class="meta-pill">Trauma-Informed Learning</span><span class="meta-pill">8 min read</span></div>
+  </section>
+  <nav class="nav-strip"><a href="#overview">Overview</a><a href="#challenge">Challenge</a><a href="#examples">Examples</a><a href="#risks">Risks</a><a href="#way-forward">Better Way</a><a href="#reflection">Reflection</a></nav>
+  <section class="panel"><div class="feature-image"><img src="leaf-ai-support-ptsd-learners.png" alt="How AI Can Support Learners Living With PTSD infographic"></div></section>
+  <section class="panel section" id="overview"><div class="article-card"><h2>Opening Hook</h2><p>For learners living with PTSD, learning can be affected by far more than the difficulty of the subject.</p>
+<p>Attention, memory, sleep, emotional regulation, trust, confidence and feelings of safety can all shape whether a learner is able to participate.</p>
+<p>AI will not treat PTSD. It should never replace clinical support, safeguarding procedures or human relationships.</p>
+<p>But used carefully, AI can help create more predictable, flexible and supportive learning experiences.</p><div class="quote">AI can support learning structure and access, but human care, safeguarding and professional judgement remain essential.</div><h2>Why This Matters</h2><p>This matters because trauma can become a hidden barrier to learning. A learner may want to engage but find concentration difficult. They may understand the topic but feel overwhelmed by deadlines. They may avoid certain activities because the environment feels unpredictable or unsafe.</p>
+<p>According to the NHS, PTSD can involve symptoms such as re-experiencing traumatic events, avoidance, feeling on edge, sleep problems and difficulty concentrating. In education, those experiences can affect attendance, participation, assessment confidence and communication.</p>
+<p>Educators are not expected to diagnose PTSD. However, they can design learning in ways that reduce avoidable stress and support safer participation.</p>
+<p>AI can be useful when it helps staff and learners create structure, clarity, choice and manageable next steps.</p><div class="key-box"><h3>Key Point</h3><p>AI should support learning tasks and routines. It should not diagnose PTSD, replace therapy or make safeguarding decisions.</p></div><h2>The Core Reality</h2><p>The core reality is that many learners living with PTSD need learning to feel more predictable and controllable.</p>
+<p>Sudden changes, unclear expectations, public pressure, crowded environments, complex instructions and high-stakes assessment moments can all increase anxiety for some learners.</p>
+<p>AI can support by turning a large task into smaller steps, creating plain-language explanations, drafting revision plans, generating gentle reminders, summarising non-confidential learning materials and helping learners rehearse questions before a session.</p>
+<p>This does not remove the need for professional support. It gives educators and learners additional tools to make learning more manageable.</p></div></section>
+  <section class="panel section" id="challenge"><div class="article-card"><h2>The Main Challenge</h2><p>The main challenge is using AI as support without making it unsafe, impersonal or over-powering.</p>
+<p>A learner living with PTSD may need control, privacy and trust. If AI is used carelessly, it can feel intrusive. If personal trauma details are entered into unapproved tools, it can create serious privacy and safeguarding concerns.</p>
+<p>The challenge is to use AI for learning support, not emotional diagnosis. AI can help organise a study plan. It should not be asked to assess a learner's mental health risk or replace professional support.</p>
+<p>The safest approach is clear boundaries: AI supports learning tasks, while staff follow safeguarding, wellbeing and referral procedures where concerns arise.</p><h3>Why It Happens</h3><p>This issue often happens because education systems are busy, standardised and assessment-driven.</p>
+<p>Staff may not have enough time to personalise instructions, break down tasks or create multiple routes through the same content. Learners may not always feel able to explain what they need, especially if they worry about being judged.</p>
+<p>AI can reduce some preparation barriers, but only when staff know how to use it responsibly. Without training, AI use may become inconsistent, unsafe or too generic.</p>
+<p>Trauma-informed AI use requires both digital literacy and human sensitivity.</p></div></section>
+  <section class="panel section" id="examples"><div class="article-card"><h2>Real-World Examples</h2><p>These examples show practical ways AI can support learning while keeping human oversight and privacy at the centre.</p><div class="grid-2"><div class="mini-card"><h3>Example 1</h3><p>A learner is overwhelmed by a long assignment brief. AI helps turn the brief into a staged checklist: read the task, identify key criteria, gather notes, draft one section, review with support and submit.</p></div>
+<div class="mini-card"><h3>Example 2</h3><p>A learner struggles to attend after poor sleep. AI helps create a flexible catch-up summary from approved class notes, which the tutor checks before sharing.</p></div>
+<div class="mini-card"><h3>Example 3</h3><p>A learner avoids asking questions in class. They use AI to rehearse questions privately, then choose one question to ask the teacher or support worker.</p></div>
+<div class="mini-card"><h3>Example 4</h3><p>A teacher uses AI to create three versions of the same explanation: a short overview, a step-by-step guide and a worked example. The teacher checks all versions for accuracy and tone.</p></div>
+<div class="mini-card"><h3>Example 5</h3><p>A support team helps a learner create a weekly routine with reminders, planned breaks and review points, while making sure the learner remains in control of the plan.</p></div></div></div></section>
+  <section class="panel section" id="risks"><div class="article-card"><h2>The Risks of Doing Nothing</h2><p>If organisations ignore this issue, learners living with PTSD may continue to be misunderstood as unreliable, disengaged or difficult.</p>
+<p>They may miss learning opportunities, avoid assessment, withdraw from support or lose confidence in education altogether.</p>
+<p>There is also an organisational risk. Without clear trauma-informed practice, staff may respond inconsistently. One member of staff may offer support, while another may apply pressure in a way that increases distress.</p>
+<p>Doing nothing can make learning environments less inclusive and less effective.</p></div></section>
+  <section class="panel section" id="way-forward"><div class="article-card"><h2>A Better Way Forward</h2><p>A better way forward is to use AI within a trauma-informed learning support framework.</p>
+<p>First, organisations should set boundaries. AI should not be used for diagnosis, therapy or safeguarding decisions. It can be used to support learning structure, accessibility, planning, revision, reminders and reflection.</p>
+<p>Second, staff should be trained to use AI safely. This includes not entering sensitive personal information, checking outputs, using respectful language and keeping human oversight.</p>
+<p>Third, learners should be given choice. AI-supported plans should be created with the learner where possible, not imposed on them.</p>
+<p>Finally, support should be reviewed. If a tool, routine or reminder increases stress, it should be changed.</p><h3>Who Benefits and How</h3><ul><li>**Learners:** clearer structure, more control, flexible explanations and reduced overwhelm.</li>
+<li>**Teachers and trainers:** faster creation of differentiated resources and calmer support routines.</li>
+<li>**Support teams:** better planning tools, clearer review points and more consistent learner support.</li>
+<li>**Organisations:** stronger inclusion, safeguarding awareness and trauma-informed practice.</li>
+<li>**Wider communities:** more learners able to remain connected to education, training and opportunity.</li></ul></div></section>
+  <section class="panel section" id="reflection"><div class="article-card"><h2>Leadership Reflection</h2><p>The leadership question is not simply whether AI can support learners living with PTSD.</p>
+<p>The deeper question is whether organisations are prepared to use AI with enough care, governance and human judgement.</p>
+<p>AI can help create predictability, clarity and flexible learning routes. But it must sit inside a culture that values safety, dignity, privacy and professional boundaries.</p><div class="key-box"><h3>Key Takeaway</h3><p>AI can support learners living with PTSD by helping create predictable routines, smaller learning steps, accessible explanations, gentle reminders and structured support pathways.</p>
+<p>It cannot diagnose, treat or replace human care.</p>
+<p>The strongest approach combines trauma-informed practice, staff training, learner choice, safeguarding awareness and responsible AI use.</p></div><h3>Closing Question</h3><p>How can we use AI to make learning feel safer and more manageable without losing the human relationships that learners need?</p><div class="quote">What are your thoughts? How can education providers use AI responsibly to support learners living with PTSD while protecting privacy, dignity and professional boundaries?</div></div></section>
+  <section class="panel section"><div class="action-panel sources"><h2>Reference Sources Reviewed</h2><p>This article uses recognised health, education and AI guidance sources while keeping the advice educational rather than clinical.</p><ul><li><a href="https://www.nhs.uk/mental-health/conditions/post-traumatic-stress-disorder-ptsd/overview/">NHS: Post-traumatic stress disorder overview</a></li>
+<li><a href="https://www.nice.org.uk/guidance/ng116">NICE: Post-traumatic stress disorder guideline NG116</a></li>
+<li><a href="https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research">UNESCO: Guidance for generative AI in education and research</a></li>
+<li><a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2023.1119810/full">Frontiers in Education: Trauma-informed education practice</a></li></ul></div></section>
+  <div class="footer-container"><footer>LEAF article format - AI, trauma-informed education and professional practice.</footer></div>
+</div>
+</body>
+</html>
