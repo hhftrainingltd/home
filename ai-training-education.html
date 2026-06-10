@@ -1638,6 +1638,78 @@ section.neon-contact a {
     grid-column: 1 / -1;
   }
 
+  .module-view-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 0 0 16px;
+  }
+
+  .module-view-button {
+    min-height: 42px;
+    padding: 0 16px;
+    border: 1px solid rgba(29, 78, 216, 0.25);
+    border-radius: 999px;
+    color: #24364f;
+    background: #fff;
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  .module-view-button:hover,
+  .module-view-button:focus-visible {
+    border-color: var(--blue);
+    color: var(--blue);
+    outline: 3px solid rgba(56, 189, 248, 0.22);
+    outline-offset: 2px;
+  }
+
+  .module-view-button.is-active {
+    color: #fff;
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+  }
+
+  .module-view-panel[hidden] {
+    display: none;
+  }
+
+  .module-benefit-panel {
+    padding: 20px;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    border-radius: 17px;
+    background: linear-gradient(135deg, #ecfeff, #f0f7ff);
+  }
+
+  .module-benefit-panel h4 {
+    color: #0f5f59;
+    font-size: 1.08rem;
+  }
+
+  .module-benefit-panel ul {
+    margin: 12px 0 0;
+    padding-left: 20px;
+    color: #334155;
+  }
+
+  .module-benefit-panel li + li {
+    margin-top: 7px;
+  }
+
+  .education-benefit-card .num {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 12px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    font-size: 0.78rem;
+    font-weight: 950;
+  }
+
   .checkpoint {
     border-color: rgba(217, 154, 21, 0.34);
     background: linear-gradient(180deg, rgba(255, 251, 235, 0.9), rgba(255, 255, 255, 0.96));
@@ -1716,6 +1788,10 @@ section.neon-contact a {
 
     .module-wide {
       grid-column: auto;
+    }
+
+    .module-view-button {
+      flex: 1 1 100%;
     }
 
     .curriculum-filter {
@@ -2105,19 +2181,22 @@ section.neon-contact a {
     <section id="benefits">
       <div class="container">
         <div class="section-head reveal">
-          <div class="label">Organisation Benefits</div>
-          <h2>Practical value for staff, learners, leaders and quality teams.</h2>
+          <div class="label">Everyday Education Benefits</div>
+          <h2>How AI can support teaching, assessment and learner success.</h2>
           <p>
-            The training is designed to help organisations move from uncertainty to structured, safer and more confident AI practice.
+            The curriculum connects responsible AI practice to real educational work, helping staff prepare more effectively, respond to learner needs and reduce repetitive administration while retaining professional judgement.
           </p>
         </div>
         <div class="grid grid-3">
-          <article class="card reveal"><h3>Better staff confidence</h3><p>Staff gain clear language, practical examples and realistic boundaries for using AI in education.</p></article>
-          <article class="card reveal"><h3>Safer AI use</h3><p>Teams understand data, safeguarding, checking, bias, learner privacy and appropriate use more clearly.</p></article>
-          <article class="card reveal"><h3>Stronger assessment practice</h3><p>Assessment teams can review authenticity, task design, learner evidence and professional discussion more confidently.</p></article>
-          <article class="card reveal"><h3>Clearer internal guidance</h3><p>Leaders can turn broad AI concerns into staff guidance, learner rules and next-step actions.</p></article>
-          <article class="card reveal"><h3>Improved productivity</h3><p>Staff can use AI to support repetitive planning, drafting and administrative tasks without losing professional control.</p></article>
-          <article class="card reveal"><h3>Accredited CPD value</h3><p>Organisations can promote staff development through CPD programmes accredited by an approved UK awarding body.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">01</span><h3>Plan lessons more efficiently</h3><p>Develop lesson structures, learning activities, retrieval tasks and knowledge checks aligned to approved curriculum outcomes.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">02</span><h3>Differentiate without lowering expectations</h3><p>Create alternative explanations, scaffolds, examples and extension activities for learners with different starting points.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">03</span><h3>Support SEND learners</h3><p>Prepare clearer layouts, visual sequences, plain-language versions and accessible formats for professional review and authorised support.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">04</span><h3>Strengthen curriculum alignment</h3><p>Map outcomes, teaching activities and assessment evidence so gaps, duplication and progression are easier to identify.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">05</span><h3>Improve assessment design</h3><p>Create question banks, authentic tasks and rubric drafts that assess genuine understanding and occupational competence.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">06</span><h3>Prepare better feedback</h3><p>Structure constructive, criteria-linked feedback drafts while teachers and assessors retain responsibility for every judgement.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">07</span><h3>Develop engaging resources</h3><p>Create scenarios, presentations, worksheets and discussion prompts adapted to the subject, level and learner group.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">08</span><h3>Reduce repetitive administration</h3><p>Support meeting summaries, action plans, evidence trackers and quality records using approved information and human checking.</p></article>
+          <article class="card education-benefit-card reveal"><span class="num">09</span><h3>Build learner AI literacy</h3><p>Help learners verify information, declare appropriate AI use and prepare for responsible work in AI-enabled industries.</p></article>
         </div>
       </div>
     </section>
@@ -2298,6 +2377,67 @@ section.neon-contact a {
             var label = filter === "all" ? "all" : button.textContent.trim();
             curriculumStatus.textContent = "Showing " + visibleCount + " module" + (visibleCount === 1 ? "" : "s") + " for " + label + ".";
           }
+        });
+      });
+
+      var educationModuleBenefits = [
+        ["Recognise where AI can support educational work and where it should not be used.", "Check generated explanations against trusted curriculum and sector sources.", "Discuss AI capabilities and limitations accurately with colleagues and learners."],
+        ["Protect learner information, confidentiality and safeguarding responsibilities.", "Review resources for bias, accessibility and potential exclusion.", "Know when AI use needs approval, specialist advice or escalation."],
+        ["Create reusable prompts for planning, resources, assessment and feedback.", "Produce more consistent drafts by setting audience, level, criteria and format.", "Reduce repeated setup time while keeping visible quality checks."],
+        ["Select tools according to educational purpose, privacy, accessibility and evidence quality.", "Avoid dependence on a single platform or fashionable feature.", "Make tool choices that can be explained and reviewed."],
+        ["Plan lessons, schemes of work and learning sequences more efficiently.", "Align outcomes, activities, resources and knowledge checks to the curriculum.", "Find gaps, duplication and progression issues before teaching."],
+        ["Create alternative explanations, scaffolds and accessible formats for varied learner needs.", "Support SEND, English, maths and study skills without lowering intended outcomes.", "Give staff more options for personalising support while authorised professionals retain decisions."],
+        ["Develop authentic assessment tasks, question banks and rubric drafts.", "Clarify permitted AI use, declarations and attribution for learners.", "Reduce over-reliance on AI detection by strengthening assessment design."],
+        ["Prepare evidence-review questions, feedback drafts and progress trackers more efficiently.", "Improve consistency across observations, discussions and portfolio reviews.", "Reduce assessor administration without automating competence or grading decisions."],
+        ["Map occupational standards to teaching, workplace activity and evidence.", "Support employer communication, portfolio development and EPA preparation.", "Prepare learners to use AI responsibly in AI-enabled workplaces."],
+        ["Support research questions, source evaluation, tutorials and independent study.", "Teach learners to verify citations and retain authorship of academic work.", "Develop clearer academic-integrity guidance for FE and HE contexts."],
+        ["Organise standardisation themes, IQA planning, action logs and quality records.", "Prepare SAR, QIP and audit evidence more efficiently from verified information.", "Maintain clear ownership, approval and document-control routes."],
+        ["Prioritise approved assistants, workflows and automation using value and risk.", "Create a practical organisational roadmap with owners and success measures.", "Measure educational benefit, staff time, quality and risk before scaling."]
+      ];
+
+      curriculumModules.forEach(function (module, index) {
+        var content = module.querySelector(".module-content");
+        var grid = content && content.querySelector(".module-grid");
+        if (!content || !grid || !educationModuleBenefits[index]) {
+          return;
+        }
+
+        var controls = document.createElement("div");
+        controls.className = "module-view-controls";
+        controls.setAttribute("role", "tablist");
+        controls.setAttribute("aria-label", module.querySelector("h3").textContent + " information");
+        controls.innerHTML = '<button class="module-view-button is-active" type="button" role="tab" aria-selected="true" data-view="learn">What You Will Learn</button><button class="module-view-button" type="button" role="tab" aria-selected="false" data-view="benefit">How This Benefits You</button>';
+
+        var learnPanel = document.createElement("div");
+        learnPanel.className = "module-view-panel";
+        learnPanel.setAttribute("data-panel", "learn");
+        learnPanel.setAttribute("role", "tabpanel");
+        grid.parentNode.insertBefore(controls, grid);
+        grid.parentNode.insertBefore(learnPanel, grid);
+        learnPanel.appendChild(grid);
+
+        var benefitPanel = document.createElement("div");
+        benefitPanel.className = "module-view-panel module-benefit-panel";
+        benefitPanel.setAttribute("data-panel", "benefit");
+        benefitPanel.setAttribute("role", "tabpanel");
+        benefitPanel.hidden = true;
+        benefitPanel.innerHTML = "<h4>Practical benefits in your role</h4><ul>" + educationModuleBenefits[index].map(function (item) {
+          return "<li>" + item + "</li>";
+        }).join("") + "</ul>";
+        learnPanel.parentNode.insertBefore(benefitPanel, learnPanel.nextSibling);
+
+        controls.querySelectorAll(".module-view-button").forEach(function (button) {
+          button.addEventListener("click", function () {
+            var selected = button.getAttribute("data-view");
+            controls.querySelectorAll(".module-view-button").forEach(function (item) {
+              var active = item === button;
+              item.classList.toggle("is-active", active);
+              item.setAttribute("aria-selected", String(active));
+            });
+            content.querySelectorAll(".module-view-panel").forEach(function (panel) {
+              panel.hidden = panel.getAttribute("data-panel") !== selected;
+            });
+          });
         });
       });
 
