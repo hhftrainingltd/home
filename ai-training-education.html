@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Training for Education | HHF Training</title>
-  <meta name="description" content="AI training for schools, colleges, universities and training providers. Practical, responsible and assessment-aware AI CPD for education teams." />
+  <title>AI Training for Teachers and Assessors | HHF Training</title>
+  <meta name="description" content="Comprehensive AI training for teachers, assessors and IQAs across vocational education, Further Education and Higher Education." />
 
   <style>
     :root {
@@ -1334,6 +1334,406 @@ section.neon-contact a {
   stroke: #f8fafc !important;
 }
 </style>
+<style id="hhf-curriculum-style">
+  .curriculum-intro {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+
+  .explain-visual {
+    margin: 0 0 28px;
+    padding: 14px;
+    border: 1px solid rgba(147, 197, 253, 0.66);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 20px 56px rgba(17, 24, 39, 0.09);
+  }
+
+  .explain-visual img {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .explain-visual figcaption {
+    padding: 13px 10px 4px;
+    color: #475569;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .practice-visuals {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+  }
+
+  .practice-visual {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 18px 48px rgba(17, 24, 39, 0.08);
+  }
+
+  .practice-visual img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(147, 197, 253, 0.5);
+  }
+
+  .practice-visual figcaption {
+    padding: 18px 20px 20px;
+  }
+
+  .practice-visual strong {
+    display: block;
+    color: var(--ink);
+    font-size: 1.08rem;
+  }
+
+  .practice-visual span {
+    display: block;
+    margin-top: 5px;
+    color: #526078;
+    font-weight: 620;
+  }
+
+  .visual-section-heading {
+    grid-column: 1 / -1;
+    margin-bottom: -2px;
+  }
+
+  .visual-section-heading h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  }
+
+  .visual-section-heading p {
+    max-width: 820px;
+    margin-top: 7px;
+    color: #526078;
+    font-weight: 650;
+  }
+
+  .pathway-card {
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 14px 38px rgba(17, 24, 39, 0.07);
+  }
+
+  .pathway-card strong {
+    display: block;
+    color: var(--blue);
+    font-size: 0.78rem;
+    font-weight: 950;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .pathway-card h3 {
+    margin-top: 8px;
+    font-size: 1.2rem;
+  }
+
+  .pathway-card p {
+    margin-top: 7px;
+    color: #475569;
+    font-weight: 620;
+  }
+
+  .curriculum-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 22px;
+  }
+
+  .curriculum-filter {
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid rgba(29, 78, 216, 0.25);
+    border-radius: 999px;
+    color: #24364f;
+    background: rgba(255, 255, 255, 0.9);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  .curriculum-filter:hover,
+  .curriculum-filter:focus-visible {
+    border-color: var(--blue);
+    color: var(--blue);
+    outline: 3px solid rgba(56, 189, 248, 0.22);
+    outline-offset: 2px;
+  }
+
+  .curriculum-filter.is-active {
+    color: #fff;
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.2);
+  }
+
+  .curriculum-status {
+    margin-bottom: 14px;
+    color: #475569;
+    font-weight: 750;
+  }
+
+  .curriculum-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .curriculum-module {
+    border-color: rgba(29, 78, 216, 0.22);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 18px 48px rgba(17, 24, 39, 0.08);
+  }
+
+  .curriculum-module[hidden] {
+    display: none;
+  }
+
+  .curriculum-module > summary {
+    position: relative;
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr) 34px;
+    gap: 16px;
+    align-items: center;
+    min-height: 104px;
+    padding: 18px 20px;
+  }
+
+  .curriculum-module > summary::after {
+    content: "+";
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--blue);
+    background: rgba(219, 234, 254, 0.72);
+    font-size: 1.35rem;
+    line-height: 1;
+  }
+
+  .curriculum-module[open] > summary::after {
+    content: "−";
+  }
+
+  .curriculum-module > summary:focus-visible {
+    outline: 3px solid rgba(56, 189, 248, 0.45);
+    outline-offset: -4px;
+    border-radius: 18px;
+  }
+
+  .module-number {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    box-shadow: 0 12px 28px rgba(29, 78, 216, 0.2);
+    font-size: 1.05rem;
+    font-weight: 950;
+  }
+
+  .module-heading {
+    min-width: 0;
+  }
+
+  .module-meta,
+  .module-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .module-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    color: #0f5f59;
+    background: rgba(20, 184, 166, 0.1);
+    border: 1px solid rgba(15, 118, 110, 0.16);
+    font-size: 0.72rem;
+    font-weight: 900;
+  }
+
+  .module-level {
+    color: #1e40af;
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(29, 78, 216, 0.16);
+  }
+
+  .module-heading h3 {
+    margin-top: 7px;
+    font-size: clamp(1.15rem, 2vw, 1.42rem);
+    line-height: 1.2;
+  }
+
+  .module-heading p {
+    margin-top: 6px;
+    color: #526078;
+    font-weight: 620;
+  }
+
+  .module-content {
+    padding: 0 20px 24px 98px;
+    border-top: 1px solid rgba(147, 197, 253, 0.3);
+  }
+
+  .module-purpose {
+    margin: 20px 0;
+    padding: 16px 18px;
+    border-left: 4px solid var(--teal);
+    border-radius: 0 14px 14px 0;
+    color: #263a57;
+    background: rgba(236, 254, 255, 0.72);
+    font-weight: 700;
+  }
+
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .module-block {
+    padding: 18px;
+    border: 1px solid rgba(147, 197, 253, 0.45);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fff, #f8fbff);
+  }
+
+  .module-block h4 {
+    color: var(--ink-2);
+    font-size: 0.96rem;
+  }
+
+  .module-block ul {
+    margin-top: 10px;
+    padding-left: 19px;
+    color: #475569;
+  }
+
+  .module-block li + li {
+    margin-top: 5px;
+  }
+
+  .module-wide {
+    grid-column: 1 / -1;
+  }
+
+  .checkpoint {
+    border-color: rgba(217, 154, 21, 0.34);
+    background: linear-gradient(180deg, rgba(255, 251, 235, 0.9), rgba(255, 255, 255, 0.96));
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .portfolio-card {
+    min-height: 100%;
+  }
+
+  .portfolio-card .icon {
+    width: auto;
+    min-width: 46px;
+    padding: 0 12px;
+  }
+
+  .no-js-note {
+    margin-top: 14px;
+    color: #526078;
+    font-size: 0.9rem;
+    font-weight: 650;
+  }
+
+  @media (max-width: 900px) {
+    .curriculum-intro,
+    .portfolio-grid,
+    .practice-visuals {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hero-grid,
+    .hero-card,
+    .visual-card {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .hero-card h1 {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      font-size: clamp(2.35rem, 11.5vw, 3.25rem);
+    }
+
+    .curriculum-module > summary {
+      grid-template-columns: 48px minmax(0, 1fr) 30px;
+      gap: 11px;
+      min-height: 92px;
+      padding: 15px;
+    }
+
+    .module-number {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      font-size: 0.92rem;
+    }
+
+    .module-heading p {
+      display: none;
+    }
+
+    .module-content {
+      padding: 0 15px 18px;
+    }
+
+    .module-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .module-wide {
+      grid-column: auto;
+    }
+
+    .curriculum-filter {
+      flex: 1 1 calc(50% - 10px);
+      padding: 0 12px;
+    }
+
+    .explain-visual {
+      padding: 7px;
+      border-radius: 18px;
+    }
+
+    .explain-visual figcaption {
+      padding: 10px 8px 6px;
+      text-align: left;
+    }
+  }
+</style>
 </head>
 
 <body>
@@ -1353,9 +1753,9 @@ section.neon-contact a {
 
       <ul class="menu" id="mainMenu">
         <li><a href="hhftraining_premium_v3.html#services">All Services</a></li>
-        <li><a href="#covers">What It Covers</a></li>
+        <li><a href="#covers">Curriculum</a></li>
         <li><a href="#outcomes">Outcomes</a></li>
-        <li><a href="#delivery">Delivery</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a class="nav-cta" href="https://calendar.app.google/4rydRXaqG1dP2xFT6">Book Training</a></li>
       </ul>
@@ -1366,19 +1766,19 @@ section.neon-contact a {
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-card reveal">
-          <div class="label">AI Training for Education</div>
-          <h1>Practical AI training for <span>schools, colleges and providers.</span></h1>
+          <div class="label">AI Training for Teachers and Assessors</div>
+          <h1>Practical AI capability for <span>Vocational Education, FE and HE.</span></h1>
           <p>
-            HHF Training helps education teams understand AI clearly, use it responsibly, protect assessment integrity and build staff confidence through practical, non-technical training.
+            A comprehensive, role-relevant curriculum helping teachers, assessors and IQAs use AI responsibly, improve learning and assessment, reduce administration and protect professional judgement.
           </p>
           <div class="hero-actions">
             <a href="https://calendar.app.google/4rydRXaqG1dP2xFT6" class="btn btn-primary">Book AI Training</a>
-            <a href="#covers" class="btn btn-secondary">View Training Content</a>
+            <a href="#covers" class="btn btn-secondary">Explore the Curriculum</a>
           </div>
           <div class="quick-points">
-            <div class="quick-point"><strong>Responsible AI</strong> Safe, ethical and practical use for education settings.</div>
-            <div class="quick-point"><strong>Accredited CPD</strong> CPD programmes accredited by an approved UK awarding body.</div>
-            <div class="quick-point"><strong>Assessment Aware</strong> Guidance on authenticity, evidence and learner ownership.</div>
+            <div class="quick-point"><strong>12 Modules</strong> Foundations, teaching, assessment, quality and advanced implementation.</div>
+            <div class="quick-point"><strong>Role Pathways</strong> Clear routes for teachers, assessors, IQAs and education leaders.</div>
+            <div class="quick-point"><strong>Practical Portfolio</strong> Workplace evidence that demonstrates responsible application.</div>
           </div>
         </div>
 
@@ -1387,7 +1787,7 @@ section.neon-contact a {
           <div class="visual-body">
             <h2>Designed for busy education teams that need clarity, not jargon.</h2>
             <div class="stat-grid">
-              <div class="stat"><strong>CPD</strong> Awareness sessions and practical workshops.</div>
+              <div class="stat"><strong>CPD</strong> Structured professional learning with practical evidence.</div>
               <div class="stat"><strong>AI</strong> Tools, prompts, risks and safe use.</div>
               <div class="stat"><strong>QA</strong> Assessment and quality practice support.</div>
               <div class="stat"><strong>Accredited</strong> CPD backed by an approved UK awarding body.</div>
@@ -1455,72 +1855,249 @@ section.neon-contact a {
     <section id="covers">
       <div class="container">
         <div class="section-head reveal">
-          <div class="label">What The Training Covers</div>
-          <h2>A detailed programme that stays simple, practical and relevant.</h2>
-          <p>
-            The content can be delivered as a focused awareness session, full workshop, leadership briefing or bespoke CPD programme.
-          </p>
+          <div class="label">Complete Curriculum</div>
+          <h2>One shared foundation with clear professional pathways.</h2>
+          <p>The curriculum progresses from essential AI understanding to role-specific teaching, assessment, quality assurance and organisational implementation. Participants build practical evidence throughout rather than learning tools in isolation.</p>
         </div>
-        <div class="grid grid-3">
-          <article class="card reveal"><span class="icon">AI</span><h3>Understanding AI Tools</h3><p>What AI tools are, what they can produce, why they make mistakes, how they handle prompts and why human checking remains essential.</p></article>
-          <article class="card reveal"><span class="icon">RS</span><h3>Responsible Use in Education</h3><p>How to use AI in ways that support learning, protect learners, respect data, reduce bias and keep professional judgement central.</p></article>
-          <article class="card reveal"><span class="icon">PR</span><h3>Prompt Writing for Educators</h3><p>Practical prompting techniques for planning, explanations, resource ideas, quiz questions, scenarios, feedback preparation and admin tasks.</p></article>
-          <article class="card reveal"><span class="icon">PL</span><h3>Planning and Resources</h3><p>How AI can support lesson outlines, differentiation ideas, starter activities, recap tasks, extension work and accessible explanations.</p></article>
-          <article class="card reveal"><span class="icon">AS</span><h3>Assessment and Authenticity</h3><p>AI risks in assignments, portfolios, reflective writing and evidence. Practical ways to strengthen authenticity and learner ownership.</p></article>
-          <article class="card reveal"><span class="icon">QA</span><h3>Quality Assurance Links</h3><p>How AI awareness connects to IQA, standardisation, assessor judgement, feedback consistency and evidence tracking.</p></article>
-          <article class="card reveal"><span class="icon">SG</span><h3>Safeguarding and Data Awareness</h3><p>What staff should consider before entering learner information, sensitive details or organisation data into AI tools.</p></article>
-          <article class="card reveal"><span class="icon">PY</span><h3>Policy and Staff Guidance</h3><p>Support for turning AI expectations into simple staff guidance, learner rules, acceptable use examples and escalation points.</p></article>
-          <article class="card reveal"><span class="icon">CPD</span><h3>Practical CPD Activities</h3><p>Hands-on examples, group discussion, real education scenarios and action planning so staff leave with useful next steps.</p></article>
+        <figure class="explain-visual reveal">
+          <img src="ai-curriculum-pathway.svg" alt="Diagram showing shared AI foundations leading to Teacher, Assessor and Leadership pathways, followed by practical portfolio evidence" />
+          <figcaption>All participants build the same responsible AI foundation before applying it through the pathway most relevant to their professional role.</figcaption>
+        </figure>
+        <div class="curriculum-intro">
+          <article class="pathway-card reveal"><strong>Modules 1–4</strong><h3>Shared Foundation</h3><p>Essential knowledge, responsible practice, prompt design and critical tool evaluation for every participant.</p></article>
+          <article class="pathway-card reveal"><strong>Modules 5–11</strong><h3>Professional Pathways</h3><p>Teaching, learner support, assessment, vocational practice, FE/HE applications and quality assurance.</p></article>
+          <article class="pathway-card reveal"><strong>Module 12</strong><h3>Optional Leadership</h3><p>Advanced assistants, governance, adoption, impact measurement and organisational implementation.</p></article>
         </div>
+        <div class="curriculum-controls reveal" role="group" aria-label="Filter curriculum modules by pathway">
+          <button class="curriculum-filter is-active" type="button" data-filter="all" aria-pressed="true">All Modules</button>
+          <button class="curriculum-filter" type="button" data-filter="teacher" aria-pressed="false">Teachers</button>
+          <button class="curriculum-filter" type="button" data-filter="assessor" aria-pressed="false">Assessors / IQAs</button>
+          <button class="curriculum-filter" type="button" data-filter="leader" aria-pressed="false">Leaders</button>
+        </div>
+        <p class="curriculum-status" id="curriculumStatus" aria-live="polite">Showing all 12 modules.</p>
+        <div class="curriculum-list">
+          <details class="curriculum-module reveal" data-pathways="teacher assessor leader">
+            <summary><span class="module-number">01</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Beginner</span><span class="module-chip">Shared Foundation</span></span><h3>AI Foundations for Education</h3><p>Understand how modern AI works, where it helps and where professional checking is essential.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Establish accurate shared language and the confidence to evaluate AI outputs without accepting them at face value.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Explain AI, machine learning, generative AI and large language models.</li><li>Distinguish generation from human understanding.</li><li>Identify suitable and unsuitable educational uses.</li><li>Recognise hallucination, uncertainty and outdated knowledge.</li><li>Describe likely developments affecting education and employment.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>Core terminology, training data, prompts, tokens and outputs.</li><li>Capabilities, limitations, myths and misconceptions.</li><li>Verification, source checking and critical AI literacy.</li><li>Future trends in education and AI-enabled workplaces.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Compare varied responses to the same education question.</li><li>Verify an output against trusted curriculum or awarding-body sources.</li><li>Classify workplace tasks by opportunity, risk and oversight.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>A vocational tutor checks an explanation against a qualification specification.</li><li>An FE lecturer identifies fabricated references.</li><li>An HE team considers changing graduate skill requirements.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Explain AI accurately to colleagues and learners.</li><li>Produce an AI terminology guide and annotated output evaluation.</li><li>Identify appropriate role-specific uses and controls.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>AI output remains draft material until verified.</li><li>High-impact decisions remain with authorised professionals.</li><li>Related modules: 2, 3, 4 and 12.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="teacher assessor leader">
+            <summary><span class="module-number">02</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Beginner</span><span class="module-chip">Shared Foundation</span></span><h3>Ethics, Safeguarding and Data Protection</h3><p>Apply responsible AI principles to learner data, safeguarding, fairness and educational decisions.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Recognise legal, ethical and safeguarding risks before using AI with educational information or learner-facing activity.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Identify personal, special-category and confidential data.</li><li>Apply data-minimisation and approved-system principles.</li><li>Recognise bias, exclusion and accessibility risks.</li><li>Evaluate safeguarding and wellbeing scenarios.</li><li>Use escalation and incident-reporting routes.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>UK GDPR principles, privacy, confidentiality and retention.</li><li>Intellectual property and ownership.</li><li>Safeguarding, vulnerable learners and wellbeing boundaries.</li><li>Bias, fairness, accessibility and reasonable adjustment.</li><li>Responsible-use policies and risk registers.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Redact and anonymise a fictional learner case.</li><li>Complete an AI task risk assessment.</li><li>Review a generated resource for bias and access barriers.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>An assessor avoids uploading identifiable portfolio evidence.</li><li>An FE team checks a generated wellbeing message.</li><li>An HE lecturer reviews examples for demographic bias.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Decide when AI use is inappropriate or requires approval.</li><li>Produce a risk assessment and safe-use checklist.</li><li>Draft role-relevant responsible-use guidance.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>No identifiable data enters an unapproved system.</li><li>Safeguarding concerns follow established designated routes.</li><li>Related modules: 1, 6, 7, 11 and 12.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="teacher assessor leader">
+            <summary><span class="module-number">03</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Beginner–Intermediate</span><span class="module-chip">Shared Foundation</span></span><h3>Prompt Design for Educators</h3><p>Create reusable, structured instructions that produce relevant and reviewable outputs.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Move beyond simple questions towards controlled prompts with context, criteria, constraints and visible quality checks.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Use role, task, context, audience and output requirements.</li><li>Break complex work into staged tasks.</li><li>Set standards, examples and exclusions.</li><li>Refine outputs through evaluation and iteration.</li><li>Create reusable department prompt templates.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>Prompt anatomy and role-based context setting.</li><li>Structured outputs, criteria and examples.</li><li>Staged prompting, follow-up questions and revision.</li><li>Assessment, feedback and resource prompts.</li><li>Prompt libraries, version control and quality notes.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Improve a weak prompt using a structured framework.</li><li>Create teacher and assessor templates for repeated tasks.</li><li>Review an output against a supplied quality rubric.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>A teacher requests differentiated examples aligned to outcomes.</li><li>An assessor drafts neutral discussion questions.</li><li>An IQA creates an agenda from non-confidential themes.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Produce clearer, more consistent outputs.</li><li>Create a prompt library with inputs and checking notes.</li><li>Submit before-and-after prompts with evaluation commentary.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>Prompts request structured outputs, not hidden reasoning.</li><li>Materials are checked against source requirements.</li><li>Related modules: 1, 4, 5, 7, 8 and 11.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="teacher assessor leader">
+            <summary><span class="module-number">04</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Beginner–Intermediate</span><span class="module-chip">Shared Foundation</span></span><h3>AI Tools and Critical Evaluation</h3><p>Select tools by educational need, information risk, accessibility and evidence quality.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Build transferable selection skills while treating current platforms as examples rather than permanent dependencies.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Compare general and specialist AI tool categories.</li><li>Select tools using purpose, privacy, access and quality criteria.</li><li>Evaluate citations, evidence and generated media.</li><li>Recognise platform settings and restrictions.</li><li>Document decisions and alternatives.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>ChatGPT, Copilot and Gemini as current examples.</li><li>Research, presentation, video, assessment and accessibility tools.</li><li>Accounts, data handling and multimodal inputs.</li><li>Generated-media provenance and tool evaluation scorecards.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Compare two approved tools on a low-risk task.</li><li>Complete a tool-selection scorecard.</li><li>Verify an AI research summary and its sources.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>A lecturer selects an accessibility tool for alternative formats.</li><li>A vocational team compares presentation tools.</li><li>An HE researcher rejects unsupported citations.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Choose tools because they fit the task and controls.</li><li>Produce a comparison scorecard and recommendation.</li><li>Record limitations, checking needs and fallback options.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>Named platforms remain subject to organisational approval.</li><li>Features, terms and privacy arrangements are checked.</li><li>Related modules: 1, 2, 3 and 12.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="teacher leader">
+            <summary><span class="module-number">05</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Intermediate</span><span class="module-chip">Teacher Pathway</span></span><h3>Curriculum and Learning Design</h3><p>Support constructive alignment, sequencing, lesson planning and resource development.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Improve planning efficiency while keeping curriculum intent, subject expertise and pedagogical judgement with the educator.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Map outcomes, activities and assessment.</li><li>Create and critique schemes of work and lesson plans.</li><li>Sequence learning towards independent application.</li><li>Generate adaptable resources and knowledge checks.</li><li>Review accuracy, level and curriculum coverage.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>Constructive alignment and curriculum mapping.</li><li>Learning outcomes and success criteria.</li><li>Schemes of work, lesson structures and retrieval practice.</li><li>Presentations, scenarios, worksheets and resources.</li><li>Differentiation, scaffolding and quality review.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Develop a mapped lesson from approved outcomes.</li><li>Generate a resource and annotate professional changes.</li><li>Use a coverage matrix to find gaps or duplication.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>A vocational tutor maps workshop activities to criteria.</li><li>An FE lecturer creates recap and extension tasks.</li><li>An HE lecturer develops an aligned seminar plan.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Create aligned, purposeful plans efficiently.</li><li>Produce a curriculum map, lesson plan and reviewed resource.</li><li>Explain where professional changes were required.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>Approved specifications override generated content.</li><li>The educator owns curriculum coverage and pedagogy.</li><li>Related modules: 3, 6, 7 and 10.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="teacher leader">
+            <summary><span class="module-number">06</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Intermediate</span><span class="module-chip">Teacher Pathway</span></span><h3>Inclusive Teaching and Learner Support</h3><p>Improve access, differentiation and independence without automating sensitive support decisions.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Broaden access and create adaptable support while respecting SEND expertise, reasonable adjustments and wellbeing boundaries.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Adapt explanations and scaffolds for varied starting points.</li><li>Create accessible resources.</li><li>Support English, maths, study skills and independence.</li><li>Plan personalised pathways with oversight.</li><li>Recognise when specialist support is required.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>SEND-aware planning and reasonable adjustments.</li><li>Reading level, language and alternative formats.</li><li>Personalised and adaptive approaches.</li><li>Study skills, coaching and learner agency.</li><li>Engagement, retention and wellbeing boundaries.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Redesign a resource using an accessibility checklist.</li><li>Create scaffolded tasks without lowering outcomes.</li><li>Review a learner-support response for risk and tone.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>A vocational learner uses a visual task sequence.</li><li>An FE student receives plain-English vocabulary support.</li><li>An HE student uses structured study prompts.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Develop inclusive resources with clearer access points.</li><li>Produce an adapted resource and accessibility review.</li><li>Create a support prompt with escalation boundaries.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>AI does not diagnose needs or determine adjustments.</li><li>Support decisions remain professionally authorised.</li><li>Related modules: 2, 5, 7 and 10.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="teacher assessor leader">
+            <summary><span class="module-number">07</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Intermediate</span><span class="module-chip">Shared Practice</span></span><h3>Assessment Design and Academic Integrity</h3><p>Design valid assessment that protects authenticity and responds proportionately to AI.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Strengthen assessment through authentic design, clear AI expectations and multiple sources of evidence rather than relying on detection.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Create formative and summative tasks aligned to outcomes.</li><li>Develop question banks, rubrics and criteria.</li><li>Increase authenticity through process and performance evidence.</li><li>Set permitted, restricted and declarable AI use.</li><li>Plan fair responses to integrity concerns.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>Validity, reliability and sufficiency.</li><li>Authentic and AI-resilient task design.</li><li>Rubrics, adjustments and accessibility.</li><li>Attribution, declarations and process evidence.</li><li>AI-detection limitations and fair investigation.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Redesign a vulnerable assessment.</li><li>Generate and check a question bank and rubric.</li><li>Draft learner AI-use and declaration guidance.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>A vocational task combines product evidence and questioning.</li><li>An FE assignment includes staged drafts.</li><li>An HE assessment includes method justification and viva.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Produce clearer, more authentic assessment.</li><li>Submit a redesigned task, rubric and AI-use statement.</li><li>Document alignment, accessibility and integrity checks.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>AI detection alone is not proof of misconduct.</li><li>Decisions follow approved regulations and fair process.</li><li>Related modules: 2, 5, 8, 9, 10 and 11.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="assessor leader">
+            <summary><span class="module-number">08</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Intermediate</span><span class="module-chip">Assessor / IQA Pathway</span></span><h3>Assessment Practice and Feedback</h3><p>Support evidence review, questioning, feedback and progress monitoring while preserving judgement.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Reduce repetitive administration and strengthen consistency without delegating assessment decisions to an AI system.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Plan assessment around standards and evidence.</li><li>Organise evidence-review questions and feedback drafts.</li><li>Support portfolios, observations and discussions.</li><li>Monitor progress and evidence gaps.</li><li>Record defensible professional decisions.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>Assessment planning and holistic opportunities.</li><li>Portfolio review, mapping and evidence tracking.</li><li>Observation and professional discussion.</li><li>Feedback quality and learner progress.</li><li>VARCS principles and assessor administration.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Create a mapped assessment plan.</li><li>Draft and de-bias professional-discussion questions.</li><li>Improve feedback against evidence and criteria.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>An apprentice assessor identifies evidence gaps.</li><li>An FE assessor prepares neutral follow-up questions.</li><li>An HE marker structures feedback themes without automated grading.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Improve consistency and reduce administration.</li><li>Produce an assessment plan, tracker and checked feedback.</li><li>Record evidence supporting each decision.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>AI does not grade, determine competence or authenticate evidence.</li><li>The assessor owns the final decision.</li><li>Related modules: 3, 7, 9 and 11.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="assessor teacher leader">
+            <summary><span class="module-number">09</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Intermediate–Advanced</span><span class="module-chip">Vocational Pathway</span></span><h3>Vocational and Apprenticeship Applications</h3><p>Apply AI to occupational learning, workplace evidence, employer engagement and EPA readiness.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Connect AI literacy with occupational competence without confusing generated explanation with demonstrated skill.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Map occupational standards to learning and evidence.</li><li>Support work-based learning and portfolios.</li><li>Plan practical observation and competence questioning.</li><li>Strengthen employer communication.</li><li>Prepare learners for EPA and AI-enabled workplaces.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>Apprenticeship delivery and off-the-job links.</li><li>Occupational competence and practical evidence.</li><li>Work products, witnesses and professional discussion.</li><li>Employer engagement and industry use cases.</li><li>EPA preparation and future skills.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Map a standard to learning, workplace activity and evidence.</li><li>Create employer guidance on AI-supported evidence.</li><li>Develop an EPA-style practice activity without live materials.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>A construction apprentice explains practical decisions.</li><li>A business apprentice declares AI support in a document.</li><li>A digital learner critiques industry AI use.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Align AI use with genuine occupational performance.</li><li>Produce a standards map, employer guide and competence activity.</li><li>Document how authenticity will be confirmed.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>Generated text cannot replace observed competence.</li><li>EPA and awarding requirements are checked at source.</li><li>Related modules: 7, 8, 10 and 11.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="teacher leader">
+            <summary><span class="module-number">10</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Intermediate–Advanced</span><span class="module-chip">FE / HE Pathway</span></span><h3>FE and HE Applications</h3><p>Support research, academic learning, tutorials and student independence with transparent AI use.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Guide students towards critical, attributable and independent academic practice rather than outsourced thinking or writing.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Support academic content and seminar preparation.</li><li>Guide research questions, searches and source evaluation.</li><li>Support writing without producing assessed work.</li><li>Develop tutorials and independent-learning strategies.</li><li>Apply transparent integrity expectations.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>Research scoping and literature-review support.</li><li>Citation verification and source provenance.</li><li>Academic writing guidance and feedback boundaries.</li><li>Tutorials, engagement and study planning.</li><li>Authorship, attribution and discipline-specific integrity.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Critique a literature summary against original sources.</li><li>Create a verification and attribution tutorial.</li><li>Develop guidance for permitted academic AI support.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>An FE learner checks technical claims.</li><li>An HE student refines search terms then reads original research.</li><li>A lecturer compares human and AI interpretations.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Support research literacy and independence.</li><li>Produce a source-evaluation activity and AI guidance.</li><li>Document boundaries between guidance and authorship.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>References are verified in original credible sources.</li><li>Students retain authorship and follow regulations.</li><li>Related modules: 2, 5, 6 and 7.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="assessor teacher leader">
+            <summary><span class="module-number">11</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Advanced</span><span class="module-chip">Quality / Compliance</span></span><h3>Quality Assurance, Compliance and Productivity</h3><p>Strengthen standardisation, IQA, documentation and improvement with auditable oversight.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Improve consistency and efficiency while maintaining reliable records, role separation and accountable quality decisions.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Support standardisation and risk-based IQA planning.</li><li>Improve evidence tracking and action monitoring.</li><li>Draft reports, summaries and observation documentation.</li><li>Support SAR, QIP and audit readiness.</li><li>Create controls for AI-supported workflows.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>IQA sampling, CAMERA coverage and standardisation.</li><li>Audit trails, document control and tracking.</li><li>SAR/QIP analysis, reports and action plans.</li><li>Meetings, emails, policies and observation notes.</li><li>Risk, regulatory awareness and compliance checks.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Create a risk-based IQA plan from fictional data.</li><li>Turn notes into a verified action log.</li><li>Review a policy draft for gaps and approval needs.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>An IQA groups themes without exposing learner data.</li><li>An FE lead drafts QIP actions from verified evidence.</li><li>An HE team organises programme-review themes.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Create clearer records and consistent workflows.</li><li>Produce a quality record, risk plan and action tracker.</li><li>Document approval, storage and review controls.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>AI makes no IQA, audit or regulatory judgement.</li><li>Current official requirements are checked.</li><li>Related modules: 2, 7, 8, 9 and 12.</li></ul></section>
+            </div></div>
+          </details>
+
+          <details class="curriculum-module reveal" data-pathways="leader">
+            <summary><span class="module-number">12</span><span class="module-heading"><span class="module-meta"><span class="module-chip module-level">Advanced</span><span class="module-chip">Optional Leadership</span></span><h3>Advanced AI and Organisational Implementation</h3><p>Develop governed assistants, workflows, strategy and sustainable responsible adoption.</p></span></summary>
+            <div class="module-content"><p class="module-purpose">Move from isolated experimentation to controlled, measurable and maintainable organisational practice.</p><div class="module-grid">
+              <section class="module-block"><h4>Learning objectives</h4><ul><li>Evaluate custom assistants, knowledge bases and agents.</li><li>Develop an AI strategy and prioritised roadmap.</li><li>Plan governance, ownership and approvals.</li><li>Support adoption, capability and change.</li><li>Measure educational value, efficiency, risk and ROI.</li></ul></section>
+              <section class="module-block"><h4>Topics covered</h4><ul><li>Custom GPT-style assistants and approved sources.</li><li>Agents, automation and workflow integration.</li><li>Knowledge management and access control.</li><li>Strategy, policy, staff development and culture.</li><li>Impact measures and future technologies.</li></ul></section>
+              <section class="module-block"><h4>Practical activities</h4><ul><li>Design a low-risk assistant with source controls.</li><li>Create a value, effort and risk use-case register.</li><li>Build a phased roadmap with measures and owners.</li></ul></section>
+              <section class="module-block"><h4>Educational examples</h4><ul><li>A provider grounds an assistant in approved guidance.</li><li>An FE group measures time saved and quality.</li><li>An HE institution governs role-based use.</li></ul></section>
+              <section class="module-block"><h4>Outcomes and portfolio evidence</h4><ul><li>Prioritise sustainable, governed adoption.</li><li>Produce a use-case register, roadmap and impact framework.</li><li>Define ownership, review dates and stop criteria.</li></ul></section>
+              <section class="module-block checkpoint"><h4>Professional checkpoint</h4><ul><li>Automation has owners, intervention and audit routes.</li><li>Higher-risk uses receive governance review.</li><li>Related modules: 1–4 and 11.</li></ul></section>
+            </div></div>
+          </details>
+        </div>
+        <div class="practice-visuals">
+          <div class="visual-section-heading reveal">
+            <h3>See the curriculum in practice.</h3>
+            <p>These visual examples connect the modules to real educational planning, activity design, assessment and professional control.</p>
+          </div>
+          <figure class="practice-visual reveal">
+            <img src="hhf-teacher-lesson-planning-4k.png" alt="Lesson planning diagram connecting objectives, resources and activities to a lesson-ready plan" loading="lazy" />
+            <figcaption><strong>Curriculum and lesson planning</strong><span>AI can help organise objectives, resources and activities, while the teacher checks sequencing, differentiation and subject accuracy.</span></figcaption>
+          </figure>
+          <figure class="practice-visual reveal">
+            <img src="hhf-teacher-classroom-activities-4k.png" alt="Active learning diagram showing tasks, group work and practice leading to learner engagement" loading="lazy" />
+            <figcaption><strong>Active and inclusive learning</strong><span>Generated ideas become useful only when educators adapt them to learner needs, accessibility requirements and intended outcomes.</span></figcaption>
+          </figure>
+          <figure class="practice-visual reveal">
+            <img src="hhf-teacher-assessment-learning-4k.png" alt="Assessment for learning diagram showing checking, feedback, support and learner progress" loading="lazy" />
+            <figcaption><strong>Assessment for learning</strong><span>AI may support questions and feedback drafts, but evidence checking, assessment decisions and next steps remain professional responsibilities.</span></figcaption>
+          </figure>
+          <figure class="practice-visual reveal">
+            <img src="hhf-teacher-ai-teaching-support-4k.png" alt="AI teaching support diagram showing ideas, checking and adaptation under teacher control" loading="lazy" />
+            <figcaption><strong>AI support under professional control</strong><span>The safe pattern is prompt, review, adapt and approve. AI assists the process without replacing educator judgement.</span></figcaption>
+          </figure>
+        </div>
+        <noscript><p class="no-js-note">All module details remain available without JavaScript. Pathway filtering requires JavaScript.</p></noscript>
       </div>
     </section>
 
     <section id="outcomes">
       <div class="container">
         <div class="section-head reveal">
-          <div class="label">Learning Outcomes</div>
-          <h2>What your organisation should be able to do after the training.</h2>
+          <div class="label">Expected Professional Outcomes</div>
+          <h2>Confident practice, stronger evidence and better learner outcomes.</h2>
           <p>
-            The aim is not to overwhelm staff with technology. The aim is to build shared understanding, safer practice and useful confidence.
+            Participants progress from understanding AI to applying it safely in their own role, with visible evidence of quality, compliance and professional review.
           </p>
         </div>
+        <figure class="explain-visual reveal">
+          <img src="ai-human-review-loop.svg" alt="Five-step responsible AI process: define the purpose, protect information, generate a draft, verify and adapt it, then approve professional use" loading="lazy" />
+          <figcaption>Generated content is never the end of the process. It must pass through evidence, accuracy, fairness, data and professional judgement checks.</figcaption>
+        </figure>
         <div class="split">
           <article class="card highlight reveal">
             <span class="num">HHF</span>
-            <h3>Outcome-focused, not tool-focused.</h3>
+            <h3>Capability that remains useful as tools change.</h3>
             <p>
-              AI tools change quickly, but organisations need stable principles: responsible use, critical checking, data awareness, assessment validity and practical staff confidence.
+              The curriculum prioritises educational purpose, evidence, critical checking, data awareness and professional accountability over dependence on any one platform.
             </p>
           </article>
           <div class="list-panel reveal">
             <ul class="check-list">
-              <li>Staff can explain what AI can and cannot reliably do.</li>
-              <li>Staff can use AI to support planning, resource ideas and admin tasks safely.</li>
-              <li>Teams understand key assessment risks linked to AI-generated work.</li>
-              <li>Assessors can discuss authenticity, evidence and learner ownership more confidently.</li>
-              <li>Leaders can identify policy, training and implementation priorities.</li>
-              <li>Organisations can create clearer expectations for staff and learners.</li>
-              <li>Teams leave with practical actions they can apply immediately.</li>
+              <li>Explain AI capabilities, limitations and risks accurately.</li>
+              <li>Design prompts and critically evaluate generated outputs.</li>
+              <li>Create inclusive curriculum, learning and assessment resources.</li>
+              <li>Protect authenticity, academic integrity and occupational competence.</li>
+              <li>Support feedback, quality records and administration responsibly.</li>
+              <li>Apply GDPR, safeguarding, ethics and human-review controls.</li>
+              <li>Implement role-specific improvements supported by portfolio evidence.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="delivery">
+    <section id="portfolio">
       <div class="container">
         <div class="section-head reveal">
-          <div class="label">Delivery Options</div>
-          <h2>Flexible AI training built around your education setting.</h2>
+          <div class="label">Practical Implementation Portfolio</div>
+          <h2>Participants produce evidence they can use and explain.</h2>
           <p>
-            The same core content can be adapted for strategic leaders, whole-staff CPD, assessors, curriculum teams or smaller working groups.
+            Each module contributes to a role-relevant portfolio demonstrating responsible application, critical review and measurable workplace value.
           </p>
         </div>
-        <div class="grid grid-4">
-          <article class="card reveal"><h3>AI Awareness Briefing</h3><p>A concise session for staff who need a clear introduction to AI, risks, opportunities and responsible use.</p><ul><li>Ideal for beginners</li><li>Clear examples</li><li>Low jargon</li></ul></article>
-          <article class="card reveal"><h3>Practical Staff Workshop</h3><p>A hands-on CPD session where staff explore prompts, planning uses, assessment concerns and practical education scenarios.</p><ul><li>Interactive</li><li>Task-based</li><li>Useful takeaways</li></ul></article>
-          <article class="card reveal"><h3>Leadership Session</h3><p>A focused briefing for senior leaders, managers and quality leads covering adoption, policy, risk and implementation priorities.</p><ul><li>Strategic focus</li><li>Policy discussion</li><li>Action planning</li></ul></article>
-          <article class="card reveal"><h3>Assessment and QA Session</h3><p>Specialist support for assessors, IQAs and curriculum teams concerned with assessment validity and AI-resilient evidence.</p><ul><li>Authenticity</li><li>Evidence quality</li><li>IQA links</li></ul></article>
+        <div class="portfolio-grid">
+          <article class="card portfolio-card reveal"><span class="icon">PLAN</span><h3>Teaching or Assessment Plan</h3><p>A mapped plan showing alignment, appropriate AI support and professional changes.</p></article>
+          <article class="card portfolio-card reveal"><span class="icon">CHECK</span><h3>Evaluated AI Output</h3><p>An annotated output demonstrating fact-checking, source verification, bias review and judgement.</p></article>
+          <article class="card portfolio-card reveal"><span class="icon">PROMPT</span><h3>Reusable Prompt Library</h3><p>Role-specific templates with inputs, output criteria, limitations and quality notes.</p></article>
+          <article class="card portfolio-card reveal"><span class="icon">RISK</span><h3>Risk and Compliance Record</h3><p>A practical assessment covering data, safeguarding, ethics, accessibility and approval.</p></article>
+          <article class="card portfolio-card reveal"><span class="icon">QA</span><h3>Learner or Quality Resource</h3><p>An inclusive resource, feedback example, evidence tracker or quality record.</p></article>
+          <article class="card portfolio-card reveal"><span class="icon">ACTION</span><h3>Implementation Plan</h3><p>A prioritised action plan with ownership, success measures, review points and boundaries.</p></article>
         </div>
       </div>
     </section>
@@ -1548,18 +2125,18 @@ section.neon-contact a {
     <section id="process">
       <div class="container">
         <div class="section-head reveal">
-          <div class="label">Training Journey</div>
-          <h2>From first conversation to practical improvement.</h2>
+          <div class="label">Curriculum Journey</div>
+          <h2>From organisational priorities to evidenced improvement.</h2>
           <p>
             HHF Training keeps the process simple, structured and focused on what your organisation needs.
           </p>
         </div>
         <div class="process">
-          <article class="card reveal"><span class="num">1</span><h3>Consultation</h3><p>Discuss your setting, staff groups, priorities, concerns and preferred delivery format.</p></article>
+          <article class="card reveal"><span class="num">1</span><h3>Consultation</h3><p>Discuss your setting, staff groups, priorities, concerns and intended professional outcomes.</p></article>
           <article class="card reveal"><span class="num">2</span><h3>Needs Review</h3><p>Identify confidence levels, AI risks, policy gaps, assessment concerns and practical training needs.</p></article>
-          <article class="card reveal"><span class="num">3</span><h3>Bespoke Design</h3><p>Shape the session around your education context, staff roles and organisational outcomes.</p></article>
-          <article class="card reveal"><span class="num">4</span><h3>Delivery</h3><p>Deliver clear, engaging and practical training with examples staff can understand and use.</p></article>
-          <article class="card reveal"><span class="num">5</span><h3>Follow-Up</h3><p>Provide actions, resources and guidance to support improvement after the session.</p></article>
+          <article class="card reveal"><span class="num">3</span><h3>Pathway Design</h3><p>Select the shared, teacher, assessor, IQA and leadership modules relevant to each role.</p></article>
+          <article class="card reveal"><span class="num">4</span><h3>Practical Application</h3><p>Apply the curriculum to real educational tasks with examples, controls and professional review.</p></article>
+          <article class="card reveal"><span class="num">5</span><h3>Impact Review</h3><p>Review portfolio evidence, workplace actions and measures of quality, efficiency and learner benefit.</p></article>
         </div>
       </div>
     </section>
@@ -1575,11 +2152,11 @@ section.neon-contact a {
         </div>
         <div class="faq">
           <details class="reveal"><summary>Is this suitable for staff with no AI experience?</summary><p>Yes. The training can start from the basics and explain AI in plain language. Staff do not need technical knowledge or previous experience with AI tools.</p></details>
-          <details class="reveal"><summary>Can the session be tailored to our organisation?</summary><p>Yes. The examples, risks, scenarios and discussion points can be adapted for schools, colleges, universities, training providers or specific departments.</p></details>
+          <details class="reveal"><summary>Can the curriculum be tailored to our organisation?</summary><p>Yes. Module emphasis, examples, risks, portfolio tasks and professional pathways can reflect your vocational, FE or HE context and staff responsibilities.</p></details>
           <details class="reveal"><summary>Does the training cover assessment and learner misuse?</summary><p>Yes. Assessment authenticity, AI-generated work, learner evidence, professional discussion and AI-resilient assessment practice can all be included.</p></details>
-          <details class="reveal"><summary>Can leaders receive a separate briefing?</summary><p>Yes. A leadership session can focus on policy, governance, staff expectations, implementation planning, risk and responsible adoption.</p></details>
-          <details class="reveal"><summary>Can this be delivered online?</summary><p>Yes. The training can be delivered in-house, live online or as a hybrid programme depending on staff location and scheduling needs.</p></details>
-          <details class="reveal"><summary>Will staff leave with practical examples?</summary><p>Yes. The session is designed around practical examples, prompts, scenarios and actions that staff can apply to their own role.</p></details>
+          <details class="reveal"><summary>Is leadership content included?</summary><p>Yes. Module 12 provides an optional pathway for curriculum leads, quality leads, managers and senior leaders responsible for strategy, governance and implementation.</p></details>
+          <details class="reveal"><summary>Do participants produce practical evidence?</summary><p>Yes. The curriculum builds a role-relevant portfolio including a plan, evaluated AI output, prompt templates, risk record, professional resource and implementation plan.</p></details>
+          <details class="reveal"><summary>Does AI replace professional judgement?</summary><p>No. Teachers, assessors, IQAs and leaders remain responsible for educational, assessment, safeguarding, quality and compliance decisions.</p></details>
         </div>
       </div>
     </section>
@@ -1646,8 +2223,8 @@ section.neon-contact a {
             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </span>
           <span class="neon-contact-text">
-            <strong>Delivery</strong>
-            <span>In-house, online and bespoke</span>
+            <strong>Curriculum</strong>
+            <span>Teachers, assessors, IQAs and leaders</span>
           </span>
         </div>
       </div>
@@ -1690,6 +2267,39 @@ section.neon-contact a {
           });
         });
       }
+
+      var filterButtons = document.querySelectorAll(".curriculum-filter");
+      var curriculumModules = document.querySelectorAll(".curriculum-module");
+      var curriculumStatus = document.getElementById("curriculumStatus");
+
+      filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          var filter = button.getAttribute("data-filter");
+          var visibleCount = 0;
+
+          filterButtons.forEach(function (item) {
+            var isActive = item === button;
+            item.classList.toggle("is-active", isActive);
+            item.setAttribute("aria-pressed", String(isActive));
+          });
+
+          curriculumModules.forEach(function (module) {
+            var pathways = (module.getAttribute("data-pathways") || "").split(" ");
+            var shouldShow = filter === "all" || pathways.indexOf(filter) !== -1;
+            module.hidden = !shouldShow;
+            if (shouldShow) {
+              visibleCount += 1;
+            } else {
+              module.open = false;
+            }
+          });
+
+          if (curriculumStatus) {
+            var label = filter === "all" ? "all" : button.textContent.trim();
+            curriculumStatus.textContent = "Showing " + visibleCount + " module" + (visibleCount === 1 ? "" : "s") + " for " + label + ".";
+          }
+        });
+      });
 
       var revealItems = document.querySelectorAll(".reveal");
 

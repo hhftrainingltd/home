@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title id="title">Responsible AI human review loop</title>
+  <desc id="desc">A five-step process: define the educational purpose, provide safe inputs, generate a draft, verify and adapt it, then approve professional use. If checks fail, the work returns for revision.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="1" stop-color="#e8f3ff"/>
+    </linearGradient>
+    <linearGradient id="step" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#d99a15"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="480" rx="34" fill="url(#bg)" stroke="#93c5fd" stroke-width="2"/>
+  <text x="60" y="62" fill="#0b2447" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="850">The responsible AI review loop</text>
+  <text x="60" y="98" fill="#526078" font-family="Segoe UI,Arial,sans-serif" font-size="18">Every useful output passes through professional checks before it reaches a learner, assessment or quality record.</text>
+
+  <path d="M216 244H268M426 244H478M636 244H688M846 244H898" stroke="#d99a15" stroke-width="6" marker-end="url(#arrow)"/>
+  <path d="M978 342C918 425 376 430 270 345" fill="none" stroke="#0f766e" stroke-width="4" stroke-dasharray="10 10" marker-end="url(#arrow)"/>
+  <text x="600" y="421" text-anchor="middle" fill="#0f766e" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="750">If evidence, accuracy, fairness or compliance checks fail: revise or stop.</text>
+
+  <g font-family="Segoe UI,Arial,sans-serif">
+    <g>
+      <circle cx="136" cy="244" r="82" fill="url(#step)"/>
+      <text x="136" y="226" text-anchor="middle" fill="#fff" font-size="44" font-weight="900">1</text>
+      <text x="136" y="260" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">DEFINE</text>
+      <text x="136" y="286" text-anchor="middle" fill="#dbeafe" font-size="14">purpose &amp; criteria</text>
+    </g>
+    <g>
+      <circle cx="346" cy="244" r="82" fill="url(#step)"/>
+      <text x="346" y="226" text-anchor="middle" fill="#fff" font-size="44" font-weight="900">2</text>
+      <text x="346" y="260" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">PROTECT</text>
+      <text x="346" y="286" text-anchor="middle" fill="#dbeafe" font-size="14">safe, minimal inputs</text>
+    </g>
+    <g>
+      <circle cx="556" cy="244" r="82" fill="url(#step)"/>
+      <text x="556" y="226" text-anchor="middle" fill="#fff" font-size="44" font-weight="900">3</text>
+      <text x="556" y="260" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">GENERATE</text>
+      <text x="556" y="286" text-anchor="middle" fill="#dbeafe" font-size="14">draft, not decision</text>
+    </g>
+    <g>
+      <circle cx="766" cy="244" r="82" fill="#d99a15"/>
+      <text x="766" y="226" text-anchor="middle" fill="#fff" font-size="44" font-weight="900">4</text>
+      <text x="766" y="260" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">VERIFY</text>
+      <text x="766" y="286" text-anchor="middle" fill="#fff7d6" font-size="14">check, adapt, evidence</text>
+    </g>
+    <g>
+      <circle cx="976" cy="244" r="82" fill="#0b2447"/>
+      <text x="976" y="226" text-anchor="middle" fill="#fff" font-size="44" font-weight="900">5</text>
+      <text x="976" y="260" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">APPROVE</text>
+      <text x="976" y="286" text-anchor="middle" fill="#dbeafe" font-size="14">professional decision</text>
+    </g>
+  </g>
+</svg>
