@@ -83,6 +83,45 @@
   var config=configs[page];
   if(!config)return;
 
+  var benefitContent={
+    "ai-training-business.html":{
+      label:"Everyday Business Benefits",title:"How AI can improve everyday business performance.",intro:"Connect each module to practical improvements in communication, administration, customer service, management and organisational decision-making.",
+      cards:[["Prepare documents faster","Develop structured first drafts of reports, proposals, emails and presentations, leaving staff more time to check quality and add expertise."],["Improve communication","Adapt tone, structure and detail for customers, colleagues, managers and external stakeholders."],["Reduce repetitive administration","Turn verified notes into summaries, action lists, trackers and reusable templates with clear human ownership."],["Strengthen customer service","Prepare consistent responses and guidance while staff retain authority over facts, commitments and sensitive cases."],["Support better management","Organise information, compare options and identify questions that require further evidence before a decision is made."],["Build responsible working habits","Help teams recognise confidential information, check outputs and use approved tools consistently."]],
+      modules:[["Recognise where AI can save time and where it creates risk.","Discuss AI opportunities confidently with colleagues and managers.","Avoid relying on fluent but inaccurate outputs."],["Protect customer, employee and commercially sensitive information.","Assess a task before entering information into an AI tool.","Reduce privacy, copyright and reputational risks."],["Create clearer emails, reports and customer communications.","Reuse tested prompts instead of starting from scratch.","Spend more time reviewing substance and less time formatting drafts."],["Map repetitive tasks and remove avoidable administration.","Create workflows with named review and exception points.","Measure whether a new process improves both speed and quality."],["Apply AI to role-specific tasks in marketing, HR, finance and operations.","Create department templates aligned with existing standards.","Share effective practice more consistently across teams."],["Move from informal experimentation to an approved plan.","Prioritise investment using value, risk and evidence.","Give staff clear policy, ownership and escalation routes."]]
+    },
+    "ai-public-sector-government.html":{
+      label:"Public Service Benefits",title:"How AI can support efficient, responsible public services.",intro:"Improve preparation, accessibility and administrative efficiency while protecting lawful decision-making, transparency and public trust.",
+      cards:[["Prepare briefings efficiently","Organise verified information into clearer briefing drafts, timelines and options for professional review."],["Improve citizen communication","Turn complex information into accessible, plain-language drafts without changing legal meaning or entitlement."],["Support evidence review","Identify themes, gaps and conflicting claims while officials continue to verify original sources."],["Reduce administrative pressure","Create summaries, correspondence drafts and action logs from approved, non-sensitive information."],["Strengthen equality and access","Review public information for readability, accessibility and potentially exclusionary language."],["Improve governance","Record use cases, risks, owners, approvals and audit evidence before AI is adopted more widely."]],
+      modules:[["Identify useful low-risk public-service tasks.","Explain why AI output is not evidence or statutory judgement.","Set clear boundaries for accountable use."],["Handle personal and sensitive information more safely.","Review outputs for bias, equality and accessibility concerns.","Use transparency and escalation routes with greater confidence."],["Prepare research and chronologies more efficiently.","Spot unsupported claims and fabricated citations.","Make uncertainty and evidence gaps more visible."],["Draft clearer notices, briefings and correspondence.","Adapt information for different levels of public understanding.","Preserve human approval of facts, commitments and legal meaning."],["Design realistic departmental use cases with oversight.","Reduce unmanaged experimentation across services.","Recognise when vulnerable-person or high-impact contexts need enhanced review."],["Create auditable ownership and approval processes.","Ask stronger questions of tools and suppliers.","Pilot lower-risk uses with measures and stop criteria."]]
+    },
+    "healthcare-ai-training.html":{
+      label:"Health and Care Benefits",title:"How AI can support safer, more efficient healthcare workflows.",intro:"Translate responsible AI knowledge into better preparation, clearer communication and reduced administrative burden without replacing clinical or care judgement.",
+      cards:[["Reduce drafting time","Prepare letters, summaries, reports and general information resources for professional checking."],["Improve health communication","Adapt approved information into clearer language and accessible formats for patients, families and carers."],["Support evidence preparation","Refine research questions, search terms and evidence tables before checking original sources."],["Organise administrative work","Create action logs and meeting summaries from approved information while maintaining accurate records."],["Protect confidentiality","Recognise special-category data and use redaction, minimisation and approved-system controls."],["Plan safer adoption","Assess clinical safety, information governance, staff impact and measurable service value before scaling."]],
+      modules:[["Separate appropriate administrative support from clinical decisions.","Explain common AI limitations to colleagues.","Recognise when an output requires clinical or specialist verification."],["Protect patient and service-user information.","Identify safeguarding, consent and bias concerns earlier.","Use local information-governance and escalation routes correctly."],["Prepare clearer document drafts and action summaries.","Reduce repetitive administrative effort.","Maintain professional approval and an accurate amendment trail."],["Develop better searches and evidence questions.","Detect unreliable claims and citations.","Spend research time on credible original evidence."],["Create clearer, more inclusive information resources.","Adapt language without losing clinical meaning.","Review translation, cultural fairness and accessibility before use."],["Prioritise lower-risk, valuable healthcare use cases.","Create controlled pilots with safety and quality measures.","Make adoption decisions using evidence rather than enthusiasm."]]
+    },
+    "cpd-professional-development.html":{
+      label:"Professional Development Benefits",title:"How AI can strengthen professional practice and development.",intro:"Use AI to diagnose learning needs, create relevant development, support reflection and provide stronger evidence of workplace impact.",
+      cards:[["Target genuine skills gaps","Connect role requirements, quality findings and future skills to focused development priorities."],["Design stronger CPD","Align objectives, active learning, workplace application and evidence instead of producing isolated content."],["Create resources efficiently","Develop scenarios, case studies, presentations and reflection tools that experts can adapt and verify."],["Support coaching conversations","Prepare open questions and reflection prompts without automating sensitive people decisions."],["Evidence workplace impact","Compare participation and confidence with observed changes, quality records and workplace outcomes."],["Build a learning culture","Create clearer annual plans, communities of practice and review cycles linked to organisational priorities."]],
+      modules:[["Understand how AI changes professional roles and skills.","Identify personal and team development priorities.","Use responsible AI language consistently."],["Create evidence-led capability and training-needs analyses.","Focus resources on the most important gaps.","Set clearer success measures from the outset."],["Design structured CPD with measurable outcomes.","Connect learning to realistic workplace application.","Produce programmes that are easier to review and improve."],["Develop engaging resources and coaching questions faster.","Adapt activities to staff roles and starting points.","Keep facilitation sensitive, inclusive and professionally led."],["Measure transfer into practice rather than attendance alone.","Organise feedback themes and workplace evidence.","Make improvement decisions using defensible evidence."],["Align CPD with quality, risk and workforce strategy.","Maintain clearer records and governance.","Plan sustainable development rather than one-off activity."]]
+    },
+    "ai-personal-training-professionals.html":{
+      label:"Professional Benefits",title:"How AI can make your everyday work more effective.",intro:"Turn AI from occasional experimentation into safe, role-specific habits that improve preparation, communication, research and personal productivity.",
+      cards:[["Save preparation time","Create structured first drafts, outlines, agendas and checklists for recurring professional tasks."],["Communicate more clearly","Adapt complex ideas for colleagues, clients, patients, learners or senior stakeholders."],["Improve research habits","Develop better questions and searches while checking facts, sources and guidance independently."],["Create reusable workflows","Build personal prompt templates and review checklists for tasks you complete repeatedly."],["Make safer tool choices","Compare privacy, data use, limitations and suitability before using a platform."],["Measure real value","Track time, quality, corrections and confidence so continued AI use is based on evidence."]],
+      modules:[["Set realistic goals based on your role and current confidence.","Identify tasks that are worth improving.","Define professional boundaries before using AI."],["Choose tools more carefully and protect sensitive information.","Build a personal checking routine.","Avoid convenience-driven use of unsuitable platforms."],["Create prompts that reflect your role, audience and standards.","Produce more consistent first drafts.","Build templates that improve with testing and review."],["Prepare reports, briefings, presentations and research more efficiently.","Communicate complex information more clearly.","Verify facts and sources before professional use."],["Turn isolated prompts into repeatable workflows.","Reduce repetitive work while retaining exception routes.","Create a personal toolkit you can maintain."],["Embed sustainable habits through a focused action plan.","Measure benefits alongside corrections and risks.","Choose informed next steps for continued development."]]
+    },
+    "ai-readiness-digital-transformation.html":{
+      label:"Transformation Benefits",title:"How AI can help your organisation prepare, adopt and improve.",intro:"Connect strategy to real processes, capabilities, technical foundations, governance and measurable organisational outcomes.",
+      cards:[["Clarify current readiness","Create a shared evidence-based view of strengths, gaps, constraints and dependencies."],["Prioritise the right problems","Score use cases by service value, feasibility, risk and readiness before choosing tools."],["Prepare people for change","Define roles, skills, communication and support needed for new ways of working."],["Strengthen foundations","Identify data, integration, cyber-security, access and supplier issues before implementation."],["Create proportionate governance","Set risk tiers, approvals, monitoring, incident routes and accountable owners."],["Scale what works","Pilot with quality, time, error and user measures, then expand only where evidence supports it."]],
+      modules:[["Understand readiness across people, process, data and technology.","Create an honest maturity baseline.","Separate ambition from implementation capability."],["Find operational problems worth solving.","Compare use cases using consistent criteria.","Avoid selecting technology before defining service need."],["Expose data, security and integration dependencies early.","Ask stronger supplier-assurance questions.","Reduce avoidable implementation failure."],["Prepare stakeholders for changed roles and workflows.","Create targeted capability development.","Address workload, equality and employee impact."],["Create consistent ownership, approval and audit records.","Apply stronger review to higher-risk uses.","Respond to incidents through defined routes."],["Build a phased roadmap with realistic dependencies.","Measure benefits and controls during pilots.","Make defensible decisions about scaling or stopping."]]
+    },
+    "training-centre-development-approval-support.html":{
+      label:"Training Centre Benefits",title:"How AI can strengthen training centre quality and compliance.",intro:"Connect centre development to clearer planning, stronger curriculum and assessment systems, approval readiness and sustainable quality improvement.",
+      cards:[["Plan provision more clearly","Organise market, learner, employer and qualification evidence into a coherent development plan."],["Map curriculum coverage","Connect outcomes, teaching, resources and assessment evidence so gaps are easier to identify."],["Strengthen staff readiness","Maintain clearer role, competence, induction, CPD and standardisation records."],["Improve learner systems","Design consistent initial assessment, support, progress tracking and evidence workflows."],["Prepare for approval and audit","Create controlled document indexes, action trackers and evidence checks against current requirements."],["Build continuous improvement","Link KPIs, sampling, feedback, SAR and QIP actions to named ownership and review dates."]],
+      modules:[["Test whether the proposed centre model is viable.","Identify resource and governance gaps before application.","Create a clearer development brief for stakeholders."],["Select qualifications using evidence rather than assumption.","Map complete curriculum and assessment coverage.","Keep specifications and approval requirements visible."],["Clarify tutor, assessor and IQA responsibilities.","Identify competence and capacity gaps early.","Plan induction, CPD and standardisation consistently."],["Build reliable assessment and learner journeys.","Track progress, evidence and support more clearly.","Design fair routes for observation, discussion and portfolio evidence."],["Create approval-ready IQA, policy and document-control systems.","Find gaps through mock audit and early sampling.","Make quality actions traceable and reviewable."],["Organise application evidence and responses to findings.","Plan quality monitoring from launch.","Treat approval as the beginning of an improvement cycle."]]
+    }
+  };
+  var benefits=benefitContent[page];
+
   var css=document.createElement("link");
   css.rel="stylesheet";
   css.href="service-curricula.css";
@@ -91,6 +130,10 @@
   pathwayCss.rel="stylesheet";
   pathwayCss.href="service-curricula-pathways.css";
   document.head.appendChild(pathwayCss);
+  var benefitsCss=document.createElement("link");
+  benefitsCss.rel="stylesheet";
+  benefitsCss.href="service-benefits.css";
+  document.head.appendChild(benefitsCss);
 
   function esc(value){
     return String(value).replace(/[&<>"']/g,function(char){
@@ -111,13 +154,18 @@
       '<summary><span class="service-module-number">'+String(index+1).padStart(2,"0")+'</span>'+
       '<span class="service-module-heading"><b>'+esc(module[1])+'</b><h3>'+esc(module[0])+'</h3><p>'+esc(module[2])+'</p></span></summary>'+
       '<div class="service-module-body"><p class="service-module-purpose">'+esc(module[2])+'</p>'+
-      '<div class="service-module-grid">'+
+      '<div class="service-module-view-controls" role="tablist" aria-label="'+esc(module[0])+' information">'+
+      '<button class="service-module-view is-active" type="button" role="tab" aria-selected="true" data-view="learn">What You Will Learn</button>'+
+      '<button class="service-module-view" type="button" role="tab" aria-selected="false" data-view="benefit">How This Benefits You</button></div>'+
+      '<div class="service-module-panel" data-panel="learn" role="tabpanel"><div class="service-module-grid">'+
       '<section class="service-module-block"><h4>Learning objectives and topics</h4>'+list(module[3])+'</section>'+
       '<section class="service-module-block"><h4>Practical activities</h4>'+list(module[4])+'</section>'+
       '<section class="service-module-block"><h4>Real-world example</h4><p>'+esc(module[5])+'</p></section>'+
       '<section class="service-module-block"><h4>Expected outcomes</h4>'+list(module[6])+'</section>'+
       '<section class="service-module-block checkpoint"><h4>Professional checkpoint</h4><p>'+esc(module[7])+'</p></section>'+
-      '</div></div></details>';
+      '</div></div>'+
+      '<div class="service-module-panel service-module-benefit-panel" data-panel="benefit" role="tabpanel" hidden><h4>Practical benefits in your role</h4>'+list(benefits.modules[index])+'<p><strong>In practice:</strong> '+esc(module[5])+'</p></div>'+
+      '</div></details>';
   }
 
   var covers=document.getElementById("covers")||document.getElementById("what-the-training-covers");
@@ -146,9 +194,28 @@
       '<div class="service-review-step"><span>3</span><div><strong>Generate</strong><small>Treat output as a draft, not a decision.</small></div></div>'+
       '<div class="service-review-step"><span>4</span><div><strong>Verify and approve</strong><small>Check, adapt, document and retain professional responsibility.</small></div></div>'+
       '</div></div></div>'+
+      '<section class="service-benefits-section" id="benefits" aria-labelledby="serviceBenefitsTitle">'+
+      '<div class="service-benefits-head reveal"><span class="service-curriculum-label">'+esc(benefits.label)+'</span><h2 id="serviceBenefitsTitle">'+esc(benefits.title)+'</h2><p>'+esc(benefits.intro)+'</p></div>'+
+      '<div class="service-benefits-grid">'+benefits.cards.map(function(item,index){return '<article class="service-benefit-card reveal"><span>'+String(index+1).padStart(2,"0")+'</span><h3>'+esc(item[0])+'</h3><p>'+esc(item[1])+'</p></article>';}).join("")+'</div>'+
+      '</section>'+
       '<div class="service-portfolio">'+config.evidence.map(function(item){return '<article class="service-evidence reveal"><strong>'+esc(item[0])+'</strong><p>'+esc(item[1])+'</p></article>';}).join("")+'</div>'+
       '</div>';
   }
+
+  document.querySelectorAll(".service-module-view").forEach(function(button){
+    button.addEventListener("click",function(){
+      var body=button.closest(".service-module-body");
+      var selected=button.getAttribute("data-view");
+      body.querySelectorAll(".service-module-view").forEach(function(item){
+        var active=item===button;
+        item.classList.toggle("is-active",active);
+        item.setAttribute("aria-selected",String(active));
+      });
+      body.querySelectorAll(".service-module-panel").forEach(function(panel){
+        panel.hidden=panel.getAttribute("data-panel")!==selected;
+      });
+    });
+  });
 
   var filterButtons=document.querySelectorAll(".service-module-filter");
   var serviceModules=document.querySelectorAll(".service-module");
